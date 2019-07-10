@@ -28,9 +28,9 @@
       <guid>https://setyokun.github.io/post/cara-membuat-website-statis-dengan-hugo-dan-github/</guid>
       <description>1 . Download dan Install Hugo versi terbaru disini Hugo Release.
 2 . Gunakan perintah hugo new site &amp;lt;direktori&amp;gt; untuk membuat site baru yang akan digenerate oleh hugo
-3 . Ketikkan git init untuk menambahkan git pada direktori yang udah digenerate oleh hugo tadi
-4 . Buat Repositori di github dengan nama blog
-5 . Tambahkan remote dengan perintah git remote add origin &amp;lt;urlRepositoriBlog&amp;gt; di direktori yang udah digenerate oleh hugo tadi</description>
+3 . Buat Repositori di github dengan nama blog
+4 . Kemudian clone repo github blog tadi ke lokal dengan perintah git clone &amp;lt;urlRepo&amp;gt;
+5 . Copykan file-file yang tadi digenerate (step 2) oleh hugo kedalam direktori hasil clone dari repo github blog, jadi sekarang di direktori blog ada file-file generate hugo dan .</description>
     </item>
     
     <item>

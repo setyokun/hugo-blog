@@ -8,9 +8,9 @@
 
 		<meta name="description" content="1 . Download dan Install Hugo versi terbaru disini Hugo Release.
 2 . Gunakan perintah hugo new site &lt;direktori&gt; untuk membuat site baru yang akan digenerate oleh hugo
-3 . Ketikkan git init untuk menambahkan git pada direktori yang udah digenerate oleh hugo tadi
-4 . Buat Repositori di github dengan nama blog
-5 . Tambahkan remote dengan perintah git remote add origin &lt;urlRepositoriBlog&gt; di direktori yang udah digenerate oleh hugo tadi">
+3 . Buat Repositori di github dengan nama blog
+4 . Kemudian clone repo github blog tadi ke lokal dengan perintah git clone &lt;urlRepo&gt;
+5 . Copykan file-file yang tadi digenerate (step 2) oleh hugo kedalam direktori hasil clone dari repo github blog, jadi sekarang di direktori blog ada file-file generate hugo dan .">
 
 
 		
@@ -71,26 +71,76 @@
 </hgroup>
 <hr class="sep" />
 </header>
-	<p>1 . Download dan Install Hugo versi terbaru disini <a href="https://github.com/gohugoio/hugo/releases">Hugo Release.</a><br />
-2 . Gunakan perintah <code>hugo new site &lt;direktori&gt;</code> untuk membuat site baru yang akan digenerate oleh hugo<br />
-3 . Ketikkan <code>git init</code> untuk menambahkan git pada direktori yang udah digenerate oleh hugo tadi<br />
-4 . Buat Repositori di github dengan nama <code>blog</code><br />
-5 . Tambahkan remote dengan perintah <code>git remote add origin &lt;urlRepositoriBlog&gt;</code> di direktori yang udah digenerate oleh hugo tadi<br />
-6 . Tambahkan theme sesuai dengan keinginanmu, kamu bisa mencarinya disini <a href="https://themes.gohugo.io/">Hugo Themes</a><br />
-7 . Pilih salah satu theme, kemudian clone dengan perintah <code>git clone &lt;urlRepoTheme&gt;</code> di folder <em>themes</em><br />
-8 . Jalankan perintah <code>hugo server -t &lt;namaTheme&gt;</code> untuk menjalankan website statis yang digenerate oleh hugo dan dapat diakses di <a href="http://localhost:1313/">http://localhost:1313/</a><br />
-9 . Gunakan ctrl + C untuk menghentikan server hugo<br />
-10 . Pastikan semua berjalan lancar, Kemudian Langsung lanjut dengan perinta <code>hugo</code> untuk mengenerate direktori public<br />
-11 . Gunakan perintah <code>rm -rf &lt;namaDirektori&gt;</code> untuk menghapus direktori tersebut<br />
-12 . Push semua file yang ada di repo lokal kita ke github dengan cara &gt;&gt; <code>git add .</code> &gt;&gt; <code>git commit -m &quot;message&quot;</code> &gt;&gt; <code>git push origin master</code>. Saat melakukan perintah <code>git push origin master</code> pertama kali pasti akan reject, karena di lokal tidak sama dengan yang ada di repo github kita, maka gunakan perintah <code>git push origin master --force</code><br />
-13 . Ketikkan perintah <code>git submodule add -b master &lt;urlSite.github.io&gt; public</code> untuk menambahkan/menanamkan repository baru pada repository inti<br />
-14 . Push to submodule repo dengan cara &gt;&gt; <code>hugo</code> &gt;&gt; <code>cd public</code> &gt;&gt; <code>git add .</code> &gt;&gt; <code>git commit -m &quot;your message&quot;</code> &gt;&gt; <code>git push origin master</code><br />
-15 . Tunggu beberapa menit, kemudian buka github-pages yang kam buat tadi daaaaan TADAA, udah jadi deh :)<br />
-16 . Agar lebih mudah untuk post content kamu perlu menambahkan <code>deploy.sh</code> (file confignya menyusul), dan cara penggunaanya adalah dengan cara <code>./deploy.sh &quot;your message&quot;</code>. simple kan :)</p>
+	<p>1 . Download dan Install Hugo versi terbaru disini <a href="https://github.com/gohugoio/hugo/releases">Hugo Release.</a></p>
+
+<p>2 . Gunakan perintah <code>hugo new site &lt;direktori&gt;</code> untuk membuat site baru yang akan digenerate oleh hugo<br />
+<img src="/img/contentHugo/hugoNewSite.png" alt="" /></p>
+
+<p>3 . Buat Repositori di github dengan nama <code>blog</code><br />
+<img src="/img/contentHugo/repoBlog.png" alt="" /></p>
+
+<p>4 . Kemudian clone repo github blog tadi ke lokal dengan perintah <code>git clone &lt;urlRepo&gt;</code></p>
+
+<p>5 . Copykan file-file yang tadi digenerate (step 2) oleh hugo kedalam direktori hasil clone dari repo github <code>blog</code>, jadi sekarang di direktori blog ada file-file generate hugo dan .git dari hasil clone</p>
+
+<p>6 . Tambahkan theme sesuai dengan keinginanmu, kamu bisa mencarinya disini <a href="https://themes.gohugo.io/">Hugo Themes</a>.</p>
+
+<p>7 . Pilih salah satu theme, kemudian clone dengan perintah <code>git clone &lt;urlRepoTheme&gt;</code> di folder <em>themes</em></p>
+
+<p>8 . Copy file <code>config.toml</code> dari direktori themes yang dipilih tadi, disini tempatnya  <code>themes</code> &gt;&gt; <code>nama theme</code> &gt;&gt; <code>exampleSite</code> &gt;&gt; <code>config.toml</code> ke root direktori</p>
+
+<p>9 . Jalankan perintah <code>hugo server</code> untuk menjalankan website statis yang digenerate oleh hugo dan dapat diakses di <a href="http://localhost:1313/">http://localhost:1313/</a><br />
+<img src="/img/contentHugo/hugoServer.png" alt="" /></p>
+
+<p>10 . Lihat hasil dari website+layout yang ada, kamu bisa mengaturnya di <code>config.toml</code> yang berada di root direktori</p>
+
+<p>11 . Gunakan ctrl + C untuk menghentikan server hugo</p>
+
+<p>12 . Push semua file yang ada di repo lokal kita ke repo github <code>blog</code> dengan cara &gt;&gt; <code>git add .</code> &gt;&gt; <code>git commit -m &quot;message&quot;</code> &gt;&gt; <code>git push origin master</code>.</p>
+
+<p>13 . Buat Repositori di github dengan nama <code>username.github.io</code><br />
+<img src="/img/contentHugo/repoSite.png" alt="" /></p>
+
+<p>14 . Ketikkan perintah <code>git submodule add -b master &lt;urlSite.github.io&gt; public</code> untuk menambahkan/menanamkan repository baru pada repository inti di direktori <em>public</em>, nantinya pada direktori public tersrbut akan ada .git</p>
+
+<p>15 . Pastikan semua berjalan lancar dan sesuai keinginan, Kemudian Langsung lanjut dengan perintah <code>hugo</code> untuk mengenerate file-file di direktori <em>public</em><br />
+<img src="/img/contentHugo/hugo.png" alt="" /></p>
+
+<p>16 . Push to github repo &lsquo;usernmae.github.io&rsquo; dengan cara &gt;&gt; <code>cd public</code> &gt;&gt; <code>git add .</code> &gt;&gt; <code>git commit -m &quot;your message&quot;</code> &gt;&gt; <code>git push origin master</code></p>
+
+<p>17 . Tunggu beberapa menit, kemudian buka github-pages (username.github.io) yang kamu buat tadi daaaaan TADAAA!!!, udah jadi deh :)<br />
+<img src="/img/contentHugo/githubPages.png" alt="" /></p>
+
+<p>18 . Agar lebih mudah untuk post content kamu perlu menambahkan <code>deploy.sh</code> , yang didalamnya terdapat file seperti dibawah ini  :</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="cp">#!/bin/bash
+</span><span class="cp"></span>
+<span class="nb">echo</span> -e <span class="s2">&#34;\033[0;32mDeploying updates to GitHub...\033[0m&#34;</span>
+
+<span class="c1"># Build the project.</span>
+hugo <span class="c1"># if using a theme, replace with `hugo -t &lt;YOURTHEME&gt;`</span>
+
+<span class="c1"># Go To Public folder</span>
+<span class="nb">cd</span> public
+<span class="c1"># Add changes to git.</span>
+git add .
+
+<span class="c1"># Commit changes.</span>
+<span class="nv">msg</span><span class="o">=</span><span class="s2">&#34;rebuilding site `date`&#34;</span>
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$#</span> -eq <span class="m">1</span> <span class="o">]</span>
+  <span class="k">then</span> <span class="nv">msg</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span>
+<span class="k">fi</span>
+git commit -m <span class="s2">&#34;</span><span class="nv">$msg</span><span class="s2">&#34;</span>
+
+<span class="c1"># Push source and build repos.</span>
+git push origin master
+
+<span class="c1"># Come Back up to the Project Root</span>
+<span class="nb">cd</span> ..</code></pre></div>
+<p>20 . Jangan lupa kasih akses pada file tersebut dengan cara <code>chmod +x deploy.sh</code>, lalu untuk cara penggunaanya adalah dengan cara <code>./deploy.sh &quot;your message&quot;</code>. simple kan :)</p>
 
 <p>NB :<br />
 - Jangan hapus file2 didalam public, nanti hugo akan meng-overide / replace file2 tersebut kecuali file .git<br />
-- kalo file .git pada direktori public terhapus, buat lagi dengan <code>git submodule</code></p>
+- kalo file .git pada direktori public terhapus, buat lagi dengan <code>git submodule</code> sama seperti step 14, dengan syntax <code>git submodule add -b master --force &lt;urlSite.github.io&gt; public</code></p>
 
 </article>
 <nav class="no-print post-nav">
