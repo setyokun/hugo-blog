@@ -3,44 +3,44 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>example.com/post/cara-membuat-website-statis-dengan-hugo-dan-github/</loc>
-    <lastmod>2019-07-10T06:12:35+07:00</lastmod>
+    <loc>https://setyokun.github.io/post/cara/</loc>
+    <lastmod>2019-07-10T11:02:18+07:00</lastmod>
   </url>
   
   <url>
-    <loc>example.com/post/</loc>
-    <lastmod>2019-07-10T06:12:35+07:00</lastmod>
+    <loc>https://setyokun.github.io/post/</loc>
+    <lastmod>2019-07-10T11:02:18+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>example.com/</loc>
-    <lastmod>2019-07-10T06:12:35+07:00</lastmod>
+    <loc>https://setyokun.github.io/</loc>
+    <lastmod>2019-07-10T11:02:18+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>example.com/post/kemarin/</loc>
+    <loc>https://setyokun.github.io/post/cara-membuat-website-statis-dengan-hugo-dan-github/</loc>
+    <lastmod>2019-07-10T06:12:35+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://setyokun.github.io/post/kemarin/</loc>
     <lastmod>2019-07-08T23:22:09+07:00</lastmod>
   </url>
   
   <url>
-    <loc>example.com/post/docker-command/</loc>
+    <loc>https://setyokun.github.io/post/docker-command/</loc>
     <lastmod>2019-07-04T16:08:02+07:00</lastmod>
   </url>
   
   <url>
-    <loc>example.com/about/</loc>
+    <loc>https://setyokun.github.io/about/</loc>
     <lastmod>2019-07-04T16:08:02+07:00</lastmod>
   </url>
   
   <url>
-    <loc>example.com/post/find-me/</loc>
-    <lastmod>2019-07-04T16:08:02+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>example.com/tags/</loc>
+    <loc>https://setyokun.github.io/tags/</loc>
     <priority>0</priority>
   </url>
   
