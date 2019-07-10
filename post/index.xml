@@ -52,10 +52,13 @@ tak hanya kamu yang dilupakan kemarinpun juga dilupakan</description>
       <description>##Glosarium Perintah Docker Container - from @youtube (programmer zaman now) #pakboi
 Resume by Setyokun&amp;rsquo;s
 docker pull mongo:4.1
-- Perintah untuk mengambil images dari docker hub (mongo itu nama imagesnya dan 4.1 itu versionnya) docker images
-- Perintah untuk menampilkan images yang sudah terinstall/ter-pull di local/pc kita docker container ls
-- Perintah untuk melihat container yang sedang berjalan/running docker container ls --all
-- Perintah untuk melihat semua container yang sedang berjalan/running ataupun yang tidak berjalan/running docker container create mongo:4.</description>
+- Perintah untuk mengambil images dari docker hub (mongo itu nama imagesnya dan 4.1 itu versionnya)
+docker images
+- Perintah untuk menampilkan images yang sudah terinstall/ter-pull di local/pc kita
+docker container ls
+- Perintah untuk melihat container yang sedang berjalan/running
+docker container ls --all
+- Perintah untuk melihat semua container yang sedang berjalan/running ataupun yang tidak berjalan/running</description>
     </item>
     
   </channel>

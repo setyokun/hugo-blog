@@ -9,10 +9,13 @@
 		<meta name="description" content="##Glosarium Perintah Docker Container - from @youtube (programmer zaman now) #pakboi
 Resume by Setyokun&rsquo;s
 docker pull mongo:4.1
-- Perintah untuk mengambil images dari docker hub (mongo itu nama imagesnya dan 4.1 itu versionnya) docker images
-- Perintah untuk menampilkan images yang sudah terinstall/ter-pull di local/pc kita docker container ls
-- Perintah untuk melihat container yang sedang berjalan/running docker container ls --all
-- Perintah untuk melihat semua container yang sedang berjalan/running ataupun yang tidak berjalan/running docker container create mongo:4.">
+- Perintah untuk mengambil images dari docker hub (mongo itu nama imagesnya dan 4.1 itu versionnya)
+docker images
+- Perintah untuk menampilkan images yang sudah terinstall/ter-pull di local/pc kita
+docker container ls
+- Perintah untuk melihat container yang sedang berjalan/running
+docker container ls --all
+- Perintah untuk melihat semua container yang sedang berjalan/running ataupun yang tidak berjalan/running">
 
 
 		
@@ -73,97 +76,79 @@ docker pull mongo:4.1
 </hgroup>
 <hr class="sep" />
 </header>
-	
-
-<p>##<strong>Glosarium Perintah Docker Container</strong>
+	<p>##<strong>Glosarium Perintah Docker Container</strong>
 - <strong>from @youtube (programmer zaman now)</strong> #pakboi</p>
 
 <p><em>Resume by Setyokun&rsquo;s</em></p>
 
-<p><strong><code>docker pull mongo:4.1</code></strong></p>
+<p><strong><code>docker pull mongo:4.1</code></strong><br />
+- Perintah untuk mengambil images dari docker hub (mongo itu nama imagesnya dan 4.1 itu versionnya)</p>
 
-<h2 id="perintah-untuk-mengambil-images-dari-docker-hub-mongo-itu-nama-imagesnya-dan-4-1-itu-versionnya">- Perintah untuk mengambil images dari docker hub (mongo itu nama imagesnya dan 4.1 itu versionnya)</h2>
+<p><strong><code>docker images</code></strong><br />
+- Perintah untuk menampilkan images yang sudah terinstall/ter-pull di local/pc kita</p>
 
-<p><strong><code>docker images</code></strong></p>
+<p><strong><code>docker container ls</code></strong><br />
+- Perintah untuk melihat container yang sedang berjalan/running</p>
 
-<h2 id="perintah-untuk-menampilkan-images-yang-sudah-terinstall-ter-pull-di-local-pc-kita">- Perintah untuk menampilkan images yang sudah terinstall/ter-pull di local/pc kita</h2>
+<p><strong><code>docker container ls --all</code></strong><br />
+- Perintah untuk melihat semua container yang sedang berjalan/running ataupun yang tidak berjalan/running</p>
 
-<p><strong><code>docker container ls</code></strong></p>
+<p><strong><code>docker container create mongo:4.1</code></strong><br />
+- Perintah untuk membuat container dari image mongo dengan version 4.1 (image tersebut bisa kita ubah sesuai dengan yang kita mau/dibutuhkan)<br />
+- Perintah diatas akan menghasilkan container dengan nama acak dan sulit diingat (ex:36596432jdsgskgds)<br />
+- Solusinya kita kasih nama agar mudah diingat dan diketikkan ulang</p>
 
-<h2 id="perintah-untuk-melihat-container-yang-sedang-berjalan-running">- Perintah untuk melihat container yang sedang berjalan/running</h2>
+<p><strong><code>docker container create --name mongoserver1 mongo:4.1</code></strong><br />
+- Perintah untuk membuat container dengan nama yang sudah diset<br />
+- mongoserver1 adalah nama container yang kita set<br />
+- &ndash;name adalah perintah untuk memberi nama container</p>
 
-<p><strong><code>docker container ls --all</code></strong></p>
+<p><strong><code>docker container create --name mongoserver1 -p 8080:27071 mongo:4.1</code></strong><br />
+- Perintah untuk membuat container dengan nama yang sudah diset dan port yang udah diset<br />
+- mongoserver1 adalah nama container yang kita set<br />
+- &ndash;name adalah perintah untuk memberi nama container<br />
+- -p adalah perintah untuk expose port keluar (8080 adalah port untuk expose keluar, 27021 adalah port internal dari docker yang dibuat)<br />
+- Port 8080 bisa diganti2 ya</p>
 
-<h2 id="perintah-untuk-melihat-semua-container-yang-sedang-berjalan-running-ataupun-yang-tidak-berjalan-running">- Perintah untuk melihat semua container yang sedang berjalan/running ataupun yang tidak berjalan/running</h2>
-
-<p><strong><code>docker container create mongo:4.1</code></strong>
-- Perintah untuk membuat container dari image mongo dengan version 4.1 (image tersebut bisa kita ubah sesuai dengan yang kita mau/dibutuhkan)
-- Perintah diatas akan menghasilkan container dengan nama acak dan sulit diingat (ex:36596432jdsgskgds)</p>
-
-<h2 id="solusinya-kita-kasih-nama-agar-mudah-diingat-dan-diketikkan-ulang">- Solusinya kita kasih nama agar mudah diingat dan diketikkan ulang</h2>
-
-<p><strong><code>docker container create --name mongoserver1 mongo:4.1</code></strong>
-- Perintah untuk membuat container dengan nama yang sudah diset
-- mongoserver1 adalah nama container yang kita set</p>
-
-<h2 id="name-adalah-perintah-untuk-memberi-nama-container">- &ndash;name adalah perintah untuk memberi nama container</h2>
-
-<p><strong><code>docker container create --name mongoserver1 -p 8080:27071 mongo:4.1</code></strong>
-- Perintah untuk membuat container dengan nama yang sudah diset dan port yang udah diset
-- mongoserver1 adalah nama container yang kita set
-- &ndash;name adalah perintah untuk memberi nama container
-- -p adalah perintah untuk expose port keluar (8080 adalah port untuk expose keluar, 27021 adalah port internal dari docker yang dibuat)</p>
-
-<h2 id="port-8080-bisa-diganti2-ya">- Port 8080 bisa diganti2 ya</h2>
-
-<p><strong><code>docker container start mongoserver1</code></strong>
-- Perintah untuk menjalankan/running container
+<p><strong><code>docker container start mongoserver1</code></strong><br />
+- Perintah untuk menjalankan/running container<br />
 - mongoserver adalah nama container yang kita buat tadi (bisa diubah sesuai nama docker yang udah dibuat nanti)</p>
 
-<hr />
+<p><strong><code>docker container stop mongoserver1 mongoserver2</code></strong><br />
+- Perintah untuk meng-stop/memberhentikan container yang sedang berjalan<br />
+- mongoserver1 dan mongoserver2 adalah nama container, jadi kita bisa meng-stop lebih dari 1 container sekaligus</p>
 
-<p><strong><code>docker container stop mongoserver1 mongoserver2</code></strong>
-- Perintah untuk meng-stop/memberhentikan container yang sedang berjalan</p>
+<p><strong><code>docker container rm mongoserver1 mongoserver2</code></strong><br />
+- Perintah untuk menghapus/delete container<br />
+- rm : remove<br />
+- mongoserver1 dan mongoserver2 adalah nama container, jadi kita bisa menghapus lebih dari 1 container sekaligus<br />
+- dengan dihapusnya container bukan berarti images juga terhapus, images masih ada (coba cek dengan : docker images)</p>
 
-<h2 id="mongoserver1-dan-mongoserver2-adalah-nama-container-jadi-kita-bisa-meng-stop-lebih-dari-1-container-sekaligus">- mongoserver1 dan mongoserver2 adalah nama container, jadi kita bisa meng-stop lebih dari 1 container sekaligus</h2>
+<p><strong><code>docker image rm mongo:4.1</code></strong><br />
+- perintah untuk menghapus images<br />
+- mongo itu nama imagenya, 4.1 itu versi imagenya<br />
+- rm itu perintah remove</p>
 
-<p><strong><code>docker container rm mongoserver1 mongoserver2</code></strong>
-- Perintah untuk menghapus/delete container
-- rm : remove
-- mongoserver1 dan mongoserver2 adalah nama container, jadi kita bisa menghapus lebih dari 1 container sekaligus</p>
+<p><strong><code>dockerfile (bukan syntax/perintah , tapi file)</code></strong><br />
+- dockerfile itu adalah suatu file yang berisi perintah-perintah untuk membuild sebuah images, biasanya perintah2 tersebut ga jauh beda dengan perintah yang biasa di pakai di ubuntu/docker/node dll</p>
 
-<h2 id="dengan-dihapusnya-container-bukan-berarti-images-juga-terhapus-images-masih-ada-coba-cek-dengan-docker-images">- dengan dihapusnya container bukan berarti images juga terhapus, images masih ada (coba cek dengan : docker images)</h2>
+<p><strong><code>docker build --tag appnode-sty:1.0 .</code></strong><br />
+- docker build : perintah untuk membuat/membuild image<br />
+- &ndash;tag : untuk memberi nama image beserta versinya<br />
+- (.) : untuk membuat image pada direktori tersebut/saat ini</p>
 
-<p><strong><code>docker image rm mongo:4.1</code></strong>
-- perintah untuk menghapus images
-- mongo itu nama imagenya, 4.1 itu versi imagenya</p>
+<p><strong><code>docker tag appnode-sty:1.0 setyokun/appnode-sty:1.0</code></strong><br />
+- perintah untuk menambahkan image dengan nama yang berbeda<br />
+- appnode-sty:1.0 adalah nama image di lokal kita<br />
+- setyokun/appnode-sty:1.0 adalah nama image yang akan dibuat berdasarkan image lokal (appnode-sty:1.0) yang ditulis tadi , penulisan nama images ini berdasarkan aturan dari dockerhub</p>
 
-<h2 id="rm-itu-perintah-remove">- rm itu perintah remove</h2>
+<p><strong><code>docker push setyokun/appnode-sty:1.0</code></strong><br />
+- perintah untuk push/upload to dockerhub</p>
 
-<p><strong><code>dockerfile (bukan syntax/perintah , tapi file)</code></strong></p>
-
-<h2 id="dockerfile-itu-adalah-suatu-file-yang-berisi-perintah-perintah-untuk-membuild-sebuah-images-biasanya-perintah2-tersebut-ga-jauh-beda-dengan-perintah-yang-biasa-di-pakai-di-ubuntu-docker-node-dll">- dockerfile itu adalah suatu file yang berisi perintah-perintah untuk membuild sebuah images, biasanya perintah2 tersebut ga jauh beda dengan perintah yang biasa di pakai di ubuntu/docker/node dll</h2>
-
-<p><strong><code>docker build --tag appnode-sty:1.0 .</code></strong>
-- docker build : perintah untuk membuat/membuild image
-- &ndash;tag : untuk memberi nama image beserta versinya</p>
-
-<h2 id="untuk-membuat-image-pada-direktori-tersebut-saat-ini">- (.) : untuk membuat image pada direktori tersebut/saat ini</h2>
-
-<p><strong><code>docker tag appnode-sty:1.0 setyokun/appnode-sty:1.0</code></strong>
-- perintah untuk menambahkan image dengan nama yang berbeda
-- appnode-sty:1.0 adalah nama image di lokal kita</p>
-
-<h2 id="setyokun-appnode-sty-1-0-adalah-nama-image-yang-akan-dibuat-berdasarkan-image-lokal-appnode-sty-1-0-yang-ditulis-tadi-penulisan-nama-images-ini-berdasarkan-aturan-dari-dockerhub">- setyokun/appnode-sty:1.0 adalah nama image yang akan dibuat berdasarkan image lokal (appnode-sty:1.0) yang ditulis tadi , penulisan nama images ini berdasarkan aturan dari dockerhub</h2>
-
-<p><strong><code>docker push setyokun/appnode-sty:1.0</code></strong></p>
-
-<h2 id="perintah-untuk-push-upload-to-dockerhub">- perintah untuk push/upload to dockerhub</h2>
-
-<p><strong><code>docker login</code></strong>
+<p><strong><code>docker login</code></strong><br />
 - perintah untuk login ke dockerhub lewat terminal</p>
 
-<p><strong>Lanjutkan !</strong></p>
+<p><strong>Sekian dan Terimakasih :)</strong></p>
 
 </article>
 <nav class="no-print post-nav">
