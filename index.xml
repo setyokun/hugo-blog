@@ -18,7 +18,7 @@
       
       <guid>https://setyokun.github.io/post/apa-aja-yang-harus-divalidasi-saat-testing-api-/</guid>
       <description>Saat Testing API ada beberapa hal yang perlu di validasi dari response api yang kita request, sung cek gambar dibawah ini :
-{ &amp;#34;data&amp;#34;: { &amp;#34;id&amp;#34;: 5, &amp;#34;email&amp;#34;: &amp;#34;setyokun@gmail.com&amp;#34;, &amp;#34;first_name&amp;#34;: &amp;#34;Setyo&amp;#34;, &amp;#34;last_name&amp;#34;: &amp;#34;Kun&amp;#34;, } } 1 . Cek Status dari Response API tersebut (ex : 200, 201, 404, dll)
+&amp;quot;status&amp;quot; : 200 { &amp;quot;id&amp;quot;: 5, &amp;quot;email&amp;quot;: &amp;quot;setyokun@gmail.com&amp;quot;, &amp;quot;first_name&amp;quot;: &amp;quot;Setyo&amp;quot;, &amp;quot;last_name&amp;quot;: &amp;quot;Kun&amp;quot;, }  1 . Cek Status dari Response API tersebut (ex : 200, 201, 404, dll)
 2 . Cek Attribute / Property apa aja yang ada dan pastikan attribute sesuai dengan user story / requirement - Harus ada attribute id, email, first_name, dan last_name</description>
     </item>
     

@@ -7,7 +7,7 @@
 		<title>Apa aja harus divalidasi / cek saat Testing API ? - Setyokun Note&#39;s</title>
 
 		<meta name="description" content="Saat Testing API ada beberapa hal yang perlu di validasi dari response api yang kita request, sung cek gambar dibawah ini :
-{ &#34;data&#34;: { &#34;id&#34;: 5, &#34;email&#34;: &#34;setyokun@gmail.com&#34;, &#34;first_name&#34;: &#34;Setyo&#34;, &#34;last_name&#34;: &#34;Kun&#34;, } } 1 . Cek Status dari Response API tersebut (ex : 200, 201, 404, dll)
+&quot;status&quot; : 200 { &quot;id&quot;: 5, &quot;email&quot;: &quot;setyokun@gmail.com&quot;, &quot;first_name&quot;: &quot;Setyo&quot;, &quot;last_name&quot;: &quot;Kun&quot;, }  1 . Cek Status dari Response API tersebut (ex : 200, 201, 404, dll)
 2 . Cek Attribute / Property apa aja yang ada dan pastikan attribute sesuai dengan user story / requirement - Harus ada attribute id, email, first_name, dan last_name">
 
 
@@ -70,15 +70,16 @@
 <hr class="sep" />
 </header>
 	<p>Saat <em>Testing API</em> ada beberapa hal yang perlu di validasi dari response api yang kita request, sung cek gambar dibawah ini :</p>
-<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
-	<span class="nt">&#34;data&#34;</span><span class="p">:</span> 
-    <span class="p">{</span>
-        <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-        <span class="nt">&#34;email&#34;</span><span class="p">:</span> <span class="s2">&#34;setyokun@gmail.com&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;first_name&#34;</span><span class="p">:</span> <span class="s2">&#34;Setyo&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;last_name&#34;</span><span class="p">:</span> <span class="s2">&#34;Kun&#34;</span><span class="p">,</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+
+<pre><code>&quot;status&quot; : 200
+    {
+        &quot;id&quot;: 5,
+        &quot;email&quot;: &quot;setyokun@gmail.com&quot;,
+        &quot;first_name&quot;: &quot;Setyo&quot;,
+        &quot;last_name&quot;: &quot;Kun&quot;,
+    }
+</code></pre>
+
 <p>1 . Cek Status dari Response API tersebut (ex : 200, 201, 404, dll)</p>
 
 <p>2 . Cek Attribute / Property apa aja yang ada dan pastikan attribute sesuai dengan user story / requirement
