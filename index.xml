@@ -19,7 +19,8 @@
       <guid>https://setyokun.github.io/post/apa-aja-yang-harus-divalidasi-saat-testing-api-/</guid>
       <description>Saat Testing API ada beberapa hal yang perlu di validasi dari response api yang kita request, sung cek gambar dibawah ini :
 &amp;quot;status&amp;quot; : 200 { &amp;quot;id&amp;quot;: 5, &amp;quot;email&amp;quot;: &amp;quot;setyokun@gmail.com&amp;quot;, &amp;quot;first_name&amp;quot;: &amp;quot;Setyo&amp;quot;, &amp;quot;last_name&amp;quot;: &amp;quot;Kun&amp;quot;, }  1 . Cek Status dari Response API tersebut (ex : 200, 201, 404, dll)
-2 . Cek Attribute / Property apa aja yang ada dan pastikan attribute sesuai dengan user story / requirement - Harus ada attribute id, email, first_name, dan last_name</description>
+2 . Cek Attribute / Property apa aja yang ada dan pastikan attribute sesuai dengan user story / requirement
+- Harus ada attribute id, email, first_name, dan last_name</description>
     </item>
     
     <item>
@@ -41,7 +42,7 @@ docker container ls --all
     </item>
     
     <item>
-      <title>Cara membuat website statis dengan hugo dan github</title>
+      <title>Cara Mudah Membuat Website Statis dengan Hugo dan Github</title>
       <link>https://setyokun.github.io/post/cara-membuat-website-statis-dengan-hugo-dan-github/</link>
       <pubDate>Wed, 10 Jul 2019 06:12:35 +0700</pubDate>
       
