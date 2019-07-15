@@ -6,17 +6,28 @@
     <description>Recent content in Post on Setyokun Note&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2019 Setyokun</copyright>
-    <lastBuildDate>Sat, 13 Jul 2019 20:43:34 +0700</lastBuildDate>
+    <lastBuildDate>Mon, 15 Jul 2019 11:02:18 +0700</lastBuildDate>
     
 	<atom:link href="https://setyokun.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Apa aja harus divalidasi / cek saat Testing API ?</title>
+      <link>https://setyokun.github.io/post/apa-aja-yang-harus-divalidasi-saat-testing-api-/</link>
+      <pubDate>Mon, 15 Jul 2019 11:02:18 +0700</pubDate>
+      
+      <guid>https://setyokun.github.io/post/apa-aja-yang-harus-divalidasi-saat-testing-api-/</guid>
+      <description>Saat Testing API ada beberapa hal yang perlu di validasi dari response api yang kita request, sung cek gambar dibawah ini :
+{ &amp;#34;data&amp;#34;: { &amp;#34;id&amp;#34;: 5, &amp;#34;email&amp;#34;: &amp;#34;setyokun@gmail.com&amp;#34;, &amp;#34;first_name&amp;#34;: &amp;#34;Setyo&amp;#34;, &amp;#34;last_name&amp;#34;: &amp;#34;Kun&amp;#34;, } } 1 . Cek Status dari Response API tersebut (ex : 200, 201, 404, dll)
+2 . Cek Attribute / Property apa aja yang ada dan pastikan attribute sesuai dengan user story / requirement - Harus ada attribute id, email, first_name, dan last_name</description>
+    </item>
+    
+    <item>
       <title>Docker - Command</title>
-      <link>https://setyokun.github.io/post/dockercommand/</link>
+      <link>https://setyokun.github.io/post/docker-command/</link>
       <pubDate>Sat, 13 Jul 2019 20:43:34 +0700</pubDate>
       
-      <guid>https://setyokun.github.io/post/dockercommand/</guid>
+      <guid>https://setyokun.github.io/post/docker-command/</guid>
       <description>##Glosarium Perintah Docker Container - from @youtube (programmer zaman now) #pakboi
 Resume by Setyokun&amp;rsquo;s
 docker pull mongo:4.1
@@ -27,15 +38,6 @@ docker container ls
 - Perintah untuk melihat container yang sedang berjalan/running
 docker container ls --all
 - Perintah untuk melihat semua container yang sedang berjalan/running ataupun yang tidak berjalan/running</description>
-    </item>
-    
-    <item>
-      <title>Cara update APK</title>
-      <link>https://setyokun.github.io/post/cara/</link>
-      <pubDate>Wed, 10 Jul 2019 11:02:18 +0700</pubDate>
-      
-      <guid>https://setyokun.github.io/post/cara/</guid>
-      <description>#COMINGSOON!</description>
     </item>
     
     <item>
@@ -49,34 +51,6 @@ docker container ls --all
 3 . Buat Repositori di github dengan nama blog
 4 . Kemudian clone repo github blog tadi ke lokal dengan perintah git clone &amp;lt;urlRepo&amp;gt;
 5 . Copykan file-file yang tadi digenerate (step 2) oleh hugo kedalam direktori hasil clone dari repo github blog, jadi sekarang di direktori blog ada file-file generate hugo dan .</description>
-    </item>
-    
-    <item>
-      <title>Kemarin</title>
-      <link>https://setyokun.github.io/post/kemarin/</link>
-      <pubDate>Mon, 08 Jul 2019 23:22:09 +0700</pubDate>
-      
-      <guid>https://setyokun.github.io/post/kemarin/</guid>
-      <description>#Kemarin
-tak hanya kamu yang dilupakan kemarinpun juga dilupakan</description>
-    </item>
-    
-    <item>
-      <title>Docker - command</title>
-      <link>https://setyokun.github.io/post/docker-command/</link>
-      <pubDate>Thu, 04 Jul 2019 16:08:02 +0700</pubDate>
-      
-      <guid>https://setyokun.github.io/post/docker-command/</guid>
-      <description>##Glosarium Perintah Docker Container - from @youtube (programmer zaman now) #pakboi
-Resume by Setyokun&amp;rsquo;s
-docker pull mongo:4.1
-- Perintah untuk mengambil images dari docker hub (mongo itu nama imagesnya dan 4.1 itu versionnya)
-docker images
-- Perintah untuk menampilkan images yang sudah terinstall/ter-pull di local/pc kita
-docker container ls
-- Perintah untuk melihat container yang sedang berjalan/running
-docker container ls --all
-- Perintah untuk melihat semua container yang sedang berjalan/running ataupun yang tidak berjalan/running</description>
     </item>
     
   </channel>

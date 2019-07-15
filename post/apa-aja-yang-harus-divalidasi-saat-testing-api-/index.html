@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="generator" content="Hugo 0.55.0" />
+		<title>Apa aja harus divalidasi / cek saat Testing API ? - Setyokun Note&#39;s</title>
+
+		<meta name="description" content="Saat Testing API ada beberapa hal yang perlu di validasi dari response api yang kita request, sung cek gambar dibawah ini :
+{ &#34;data&#34;: { &#34;id&#34;: 5, &#34;email&#34;: &#34;setyokun@gmail.com&#34;, &#34;first_name&#34;: &#34;Setyo&#34;, &#34;last_name&#34;: &#34;Kun&#34;, } } 1 . Cek Status dari Response API tersebut (ex : 200, 201, 404, dll)
+2 . Cek Attribute / Property apa aja yang ada dan pastikan attribute sesuai dengan user story / requirement - Harus ada attribute id, email, first_name, dan last_name">
+
+
+		
+		
+		
+		<link rel="stylesheet" href="/css/ui.min.css"/>
+		
+		
+		
+
+		<link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono|Lato|Raleway">
+
+		
+
+		<style>
+	a { color: #000000; }
+	blockquote {
+		border-left-color: #000000;
+		border-right-color: #000000; }
+	.bar a:hover {
+		color: #000000;
+		text-decoration: none; }
+	.sep {
+		margin-top: 2rem;
+		margin-bottom: 1rem;
+		margin-left:0;
+		width: 24rem;
+		border-top: 2px solid #000000; }
+</style>
+
+	</head>
+
+<body>
+<header class="container no-print">
+	<div class="u-header">
+		<nav class="bar">
+	<ul><li>
+			<a href="/">
+				<img class="icon-text" src="/img/prev.svg"/>
+			</a>
+		</li><li><a href="/about">About</a></li><li><a href="/post/">Blog</a></li></ul>
+</nav>
+
+	</div>
+</header>
+<main class="container">
+
+<article>
+	<header><hgroup id="brand">
+	<h1>Apa aja harus divalidasi / cek saat Testing API ?</h1>
+	<h5>
+		
+		<time datetime="2019-07-15 11:02:18 &#43;0700 WIB">Jul 15, 2019</time>
+		<span class="no-print">
+			<span>
+	</h5>
+	
+</hgroup>
+<hr class="sep" />
+</header>
+	<p>Saat <em>Testing API</em> ada beberapa hal yang perlu di validasi dari response api yang kita request, sung cek gambar dibawah ini :</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+	<span class="nt">&#34;data&#34;</span><span class="p">:</span> 
+    <span class="p">{</span>
+        <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+        <span class="nt">&#34;email&#34;</span><span class="p">:</span> <span class="s2">&#34;setyokun@gmail.com&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;first_name&#34;</span><span class="p">:</span> <span class="s2">&#34;Setyo&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;last_name&#34;</span><span class="p">:</span> <span class="s2">&#34;Kun&#34;</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+<p>1 . Cek Status dari Response API tersebut (ex : 200, 201, 404, dll)</p>
+
+<p>2 . Cek Attribute / Property apa aja yang ada dan pastikan attribute sesuai dengan user story / requirement
+ - Harus ada attribute <code>id, email, first_name, dan last_name</code></p>
+
+<p>3 . Cek Value
+- Harus ada value <code>2, setyokun@gmail.com, Setyo, Kun</code></p>
+
+<p>4 . Cek Tipe Data dan Length Value
+- Isi Value <code>2</code> - tipe data <code>int</code> - length <code>2</code>
+- Isi Value <code>setyokun@gmail.com</code> - tipe data <code>string</code> - length <code>30</code>
+- Isi Value <code>Setyo</code>- tipe data <code>string</code> - length <code>30</code>
+- Isi Value <code>Kun</code> - tipe data <code>string</code> - length <code>30</code></p>
+
+<p>Sekian sharing-sharing sore ini, thanks gengs !</p>
+
+</article>
+<nav class="no-print post-nav">
+
+	<a class="prev-post" href="https://setyokun.github.io/post/docker-command/">
+		<img class="icon-text" src="/img/prev.svg"/>Docker - Command</a>
+
+
+</nav>
+
+
+
+
+			<hr class="sep" />
+		</main>
+		<footer class="container no-print">
+			<div class="u-footer">
+				
+<a href="mailto:piscaprasetyoaw@gmail.com"><img class="icon-social" src="/img/email.svg" alt="Email Me!"/></a>
+
+
+<a href="https://github.com/setyokun/"><img class="icon-social" src="/img/github.svg" alt="Github"/></a>
+
+
+<a href="https://www.linkedin.com/in/pisca-prasetyo-away-wecan/"><img class="icon-social" src="/img/linkedin.svg" alt="Linkedin"/></a>
+
+<a href="https://setyokun.github.io/index.xml" target="_blank"><img class="icon-social" src="/img/feed.svg" alt="Feed"></a>
+
+				<p>
+					
+					
+					
+					
+					&copy; 2019 Setyokun
+					
+					
+				</p>
+				
+				<a href="#brand">
+					<img class="icon-text" src="/img/toup.svg" alt="To Up"/>
+					<span>Back to Up</span>
+				</a>
+				
+			</div>
+		</footer>
+		
+	</body>
+</html>
+
