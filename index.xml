@@ -6,10 +6,21 @@
     <description>Recent content on Setyokun Note&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2019 Setyokun</copyright>
-    <lastBuildDate>Mon, 15 Jul 2019 11:02:18 +0700</lastBuildDate>
+    <lastBuildDate>Wed, 17 Jul 2019 14:58:43 +0700</lastBuildDate>
     
 	<atom:link href="https://setyokun.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Step by step membuat Automation Web dengan Nightwatch JS</title>
+      <link>https://setyokun.github.io/post/step-by-step-membuat-automation-web-dengan-nightwatch-js/</link>
+      <pubDate>Wed, 17 Jul 2019 14:58:43 +0700</pubDate>
+      
+      <guid>https://setyokun.github.io/post/step-by-step-membuat-automation-web-dengan-nightwatch-js/</guid>
+      <description>Banyak framework automation untuk web yang telah dibuat oleh para pengembang yang berkecimpung disana, salah satunya adalah Nightwatch JS. Nah disini saya akan share cara membuat automation web dengan framework nightwatch js dan case Login Facebook, tanpa basa-basi lagi berikut step by stepnya :
+1 . Buat Repository kosong di github dengan nama &amp;lsquo;atweb-login-fb&amp;rsquo;, kemudian clone repo tersebut ke lokal.
+2 . Buka Repo tersebut dengan IDE kesayangan kalian misal Sublime,IntelliJ, dll.</description>
+    </item>
     
     <item>
       <title>Apa aja yang harus divalidasi / cek saat Testing API ?</title>
