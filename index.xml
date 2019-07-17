@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>Apa aja harus divalidasi / cek saat Testing API ?</title>
+      <title>Apa aja yang harus divalidasi / cek saat Testing API ?</title>
       <link>https://setyokun.github.io/post/apa-aja-yang-harus-divalidasi-saat-testing-api-/</link>
       <pubDate>Mon, 15 Jul 2019 11:02:18 +0700</pubDate>
       
@@ -55,14 +55,12 @@ docker container ls --all
     </item>
     
     <item>
-      <title>about</title>
+      <title>About</title>
       <link>https://setyokun.github.io/about/</link>
       <pubDate>Thu, 04 Jul 2019 16:08:02 +0700</pubDate>
       
       <guid>https://setyokun.github.io/about/</guid>
-      <description>#Setyokun-Note&amp;rsquo;s
-**Setyokun Setyokun Setyokun Setyokun Setyokun Setyokun Setyokun Setyokun Setyokun Setyokun Setyokun Setyokun Setyokun Setyokun Setyokun Setyokun Setyokun Setyokun Setyokun Setyokun Setyokun **
-The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from &amp;ldquo;de Finibus Bonorum et Malorum&amp;rdquo; by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham. </description>
+      <description>#Setyokun-Note&amp;rsquo;s adalah sebuah catatan yang dibuat agar pembuat ini tidak lupa apa yang sudah di ulik.</description>
     </item>
     
   </channel>

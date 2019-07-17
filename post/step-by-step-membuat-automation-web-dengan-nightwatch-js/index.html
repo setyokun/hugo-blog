@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="generator" content="Hugo 0.55.0" />
+		<title>Step by step membuat Automation Web dengan Nightwatch JS - Setyokun Note&#39;s</title>
+
+		<meta name="description" content="Banyak framework automation untuk web yang telah dibuat oleh para pengembang yang berkecimpung disana, salah satunya adalah Nightwatch JS. Nah disini saya akan share cara membuat automation web dengan framework nightwatch js dan case Login Facebook, tanpa basa-basi lagi berikut step by stepnya :
+1 . Buat Repository kosong di github dengan nama &lsquo;atweb-login-fb&rsquo;, kemudian clone repo tersebut ke lokal.
+2 . Buka Repo tersebut dengan IDE kesayangan kalian misal Sublime,IntelliJ, dll.">
+
+
+		
+		
+		
+		<link rel="stylesheet" href="/css/ui.min.css"/>
+		
+		
+		
+
+		<link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono|Lato|Raleway">
+
+		
+
+		<style>
+	a { color: #000000; }
+	blockquote {
+		border-left-color: #000000;
+		border-right-color: #000000; }
+	.bar a:hover {
+		color: #000000;
+		text-decoration: none; }
+	.sep {
+		margin-top: 2rem;
+		margin-bottom: 1rem;
+		margin-left:0;
+		width: 24rem;
+		border-top: 2px solid #000000; }
+</style>
+
+	</head>
+
+<body>
+<header class="container no-print">
+	<div class="u-header">
+		<nav class="bar">
+	<ul><li>
+			<a href="/">
+				<img class="icon-text" src="/img/prev.svg"/>
+			</a>
+		</li><li><a href="/about">About</a></li><li><a href="/post/">Blog</a></li></ul>
+</nav>
+
+	</div>
+</header>
+<main class="container">
+
+<article>
+	<header><hgroup id="brand">
+	<h1>Step by step membuat Automation Web dengan Nightwatch JS</h1>
+	<h5>
+		
+		<time datetime="2019-07-15 20:58:43 &#43;0700 WIB">Jul 15, 2019</time>
+		<span class="no-print">
+			<span>
+	</h5>
+	
+</hgroup>
+<hr class="sep" />
+</header>
+	<p>Banyak framework automation untuk web yang telah dibuat oleh para pengembang yang berkecimpung disana, salah satunya adalah Nightwatch JS. Nah disini saya akan share cara membuat automation web dengan framework nightwatch js dan case <strong>Login Facebook</strong>, tanpa basa-basi lagi berikut step by stepnya :</p>
+
+<p>1 . Buat Repository kosong di github dengan nama &lsquo;atweb-login-fb&rsquo;, kemudian clone repo tersebut ke lokal.</p>
+
+<p>2 . Buka Repo tersebut dengan IDE kesayangan kalian misal Sublime,IntelliJ, dll. Disini saya pake VSCode untuk IDEnya.</p>
+
+<p>3 . Ketikkan perintah <code>npm init</code> untuk membuat / men-generate file <code>package.json</code>, sebelumnya isi <em>pakcage name, version, description, dll</em> sesuai keinginan kalian.</p>
+
+<p><img src="/img/atweb/npmInit.png" alt="" /></p>
+
+<p>4 . Tambahkan dependencies pada file package.json, sung copy aja dependecies di bawah ini :</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript">  <span class="s2">&#34;dependencies&#34;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&#34;chromedriver&#34;</span><span class="o">:</span> <span class="s2">&#34;^2.46.0&#34;</span><span class="p">,</span>
+    <span class="s2">&#34;concurrently&#34;</span><span class="o">:</span> <span class="s2">&#34;^4.1.0&#34;</span><span class="p">,</span>
+    <span class="s2">&#34;cucumber&#34;</span><span class="o">:</span> <span class="s2">&#34;^5.1.0&#34;</span><span class="p">,</span>
+    <span class="s2">&#34;cucumber-pretty&#34;</span><span class="o">:</span> <span class="s2">&#34;^1.5.0&#34;</span><span class="p">,</span>
+    <span class="s2">&#34;dotenv&#34;</span><span class="o">:</span> <span class="s2">&#34;^7.0.0&#34;</span><span class="p">,</span>
+    <span class="s2">&#34;eslint&#34;</span><span class="o">:</span> <span class="s2">&#34;^5.16.0&#34;</span><span class="p">,</span>
+    <span class="s2">&#34;eslint-config-airbnb-base&#34;</span><span class="o">:</span> <span class="s2">&#34;^13.1.0&#34;</span><span class="p">,</span>
+    <span class="s2">&#34;eslint-plugin-import&#34;</span><span class="o">:</span> <span class="s2">&#34;^2.16.0&#34;</span><span class="p">,</span>
+    <span class="s2">&#34;geckodriver&#34;</span><span class="o">:</span> <span class="s2">&#34;^1.16.0&#34;</span><span class="p">,</span>
+    <span class="s2">&#34;multiple-cucumber-html-reporter&#34;</span><span class="o">:</span> <span class="s2">&#34;^1.11.6&#34;</span><span class="p">,</span>
+    <span class="s2">&#34;nightwatch&#34;</span><span class="o">:</span> <span class="s2">&#34;^0.9.21&#34;</span><span class="p">,</span>
+    <span class="s2">&#34;nightwatch-cucumber&#34;</span><span class="o">:</span> <span class="s2">&#34;^9.1.3&#34;</span><span class="p">,</span>
+    <span class="s2">&#34;selenium-server&#34;</span><span class="o">:</span> <span class="s2">&#34;^3.141.59&#34;</span>
+  <span class="p">}</span>
+</code></pre></div>
+<p>Pastikan lagi file package.json kalian udah seperti ini :
+<img src="img/atweb/addDependencies.png" alt="" /></p>
+
+<p>5 . Ketikkan perintah <code>npm install</code>, perintah ini untuk meng-install dependecies-dependencies yang baru kita tambahkan tadi.</p>
+
+<p>6 . Buat folder <code>tests</code>, kemudian buat folder lagi didalam folder <code>tests</code> dengan nama <code>base-functions, features, pages, dan steps</code></p>
+
+<p>7 . Buat file <code>base-functions.js</code> didalam folder <code>base-functions</code> yang tadi kita buat, kemudian tambahkan/copy file dibawah ini kedalam file js tadi</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="k">const</span> <span class="nx">timeOut</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">;</span>
+
+<span class="c1">// click element wait for present and visible
+</span><span class="c1"></span><span class="k">const</span> <span class="nx">clickElement</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">page</span><span class="p">,</span> <span class="nx">elementSelector</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">waitElementVisible</span><span class="p">(</span><span class="nx">page</span><span class="p">,</span> <span class="nx">elementSelector</span><span class="p">);</span>
+  <span class="nx">page</span><span class="p">.</span><span class="nx">click</span><span class="p">(</span><span class="nx">elementSelector</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="c1">// wait until element is present
+</span><span class="c1"></span><span class="k">const</span> <span class="nx">waitElementPresent</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">page</span><span class="p">,</span> <span class="nx">elementSelector</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">page</span><span class="p">.</span><span class="nx">waitForElementPresent</span><span class="p">(</span><span class="nx">elementSelector</span><span class="p">,</span> <span class="nx">timeOut</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="c1">// wait until element is visible
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">waitElementVisible</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">page</span><span class="p">,</span> <span class="nx">elementSelector</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">waitElementPresent</span><span class="p">(</span><span class="nx">page</span><span class="p">,</span> <span class="nx">elementSelector</span><span class="p">);</span>
+  <span class="nx">page</span><span class="p">.</span><span class="nx">waitForElementVisible</span><span class="p">(</span><span class="nx">elementSelector</span><span class="p">,</span> <span class="nx">timeOut</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="c1">// set value to element
+</span><span class="c1"></span><span class="k">const</span> <span class="nx">setValueElement</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">page</span><span class="p">,</span> <span class="nx">elementSelector</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">waitElementVisible</span><span class="p">(</span><span class="nx">page</span><span class="p">,</span> <span class="nx">elementSelector</span><span class="p">);</span>
+  <span class="nx">page</span><span class="p">.</span><span class="nx">clearValue</span><span class="p">(</span><span class="nx">elementSelector</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">page</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="nx">elementSelector</span><span class="p">,</span> <span class="nx">value</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">};</span>
+
+<span class="c1">// set value to element then press ENTER
+</span><span class="c1"></span><span class="k">const</span> <span class="nx">setValueElementThenEnter</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">page</span><span class="p">,</span> <span class="nx">elementSelector</span><span class="p">,</span> <span class="nx">value</span><span class="p">,</span> <span class="nx">browser</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">waitElementVisible</span><span class="p">(</span><span class="nx">page</span><span class="p">,</span> <span class="nx">elementSelector</span><span class="p">);</span>
+  <span class="nx">page</span><span class="p">.</span><span class="nx">clearValue</span><span class="p">(</span><span class="nx">elementSelector</span><span class="p">);</span>
+  <span class="nx">page</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="nx">elementSelector</span><span class="p">,</span> <span class="p">[</span><span class="nx">value</span><span class="p">,</span> <span class="nx">browser</span><span class="p">.</span><span class="nx">Keys</span><span class="p">.</span><span class="nx">ENTER</span><span class="p">]);</span>
+<span class="p">};</span>
+
+<span class="c1">// check if the given element contains the specific text
+</span><span class="c1"></span><span class="k">const</span> <span class="nx">assertContainsText</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">page</span><span class="p">,</span> <span class="nx">elementSelector</span><span class="p">,</span> <span class="nx">expectedText</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">waitElementVisible</span><span class="p">(</span><span class="nx">page</span><span class="p">,</span> <span class="nx">elementSelector</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">page</span><span class="p">.</span><span class="nx">assert</span><span class="p">.</span><span class="nx">containsText</span><span class="p">(</span><span class="nx">elementSelector</span><span class="p">,</span> <span class="nx">expectedText</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="c1">// check if the given element equals the specific text
+</span><span class="c1"></span><span class="k">const</span> <span class="nx">expectElementEqualText</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">page</span><span class="p">,</span> <span class="nx">elementSelector</span><span class="p">,</span> <span class="nx">expectedText</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">waitElementVisible</span><span class="p">(</span><span class="nx">page</span><span class="p">,</span> <span class="nx">elementSelector</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">page</span><span class="p">.</span><span class="nx">expect</span><span class="p">.</span><span class="nx">element</span><span class="p">(</span><span class="nx">elementSelector</span><span class="p">).</span><span class="nx">text</span><span class="p">.</span><span class="nx">to</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">expectedText</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="c1">// scroll to element
+</span><span class="c1"></span><span class="k">const</span> <span class="nx">scrollToElement</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">page</span><span class="p">,</span> <span class="nx">elementSelector</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">page</span><span class="p">.</span><span class="nx">moveToElement</span><span class="p">(</span><span class="nx">elementSelector</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="c1">// sleep/pause page
+</span><span class="c1"></span><span class="k">const</span> <span class="nx">pauseSleep</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">page</span><span class="p">,</span> <span class="nx">timeSleep</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">page</span><span class="p">.</span><span class="nx">pause</span><span class="p">(</span><span class="nx">timeSleep</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="c1">// expect to be visible
+</span><span class="c1"></span><span class="k">const</span> <span class="nx">expectVisible</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">page</span><span class="p">,</span> <span class="nx">elementSelector</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">waitElementVisible</span><span class="p">(</span><span class="nx">page</span><span class="p">,</span> <span class="nx">elementSelector</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">page</span><span class="p">.</span><span class="nx">expect</span><span class="p">.</span><span class="nx">element</span><span class="p">(</span><span class="nx">elementSelector</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="nx">be</span><span class="p">.</span><span class="nx">visible</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">clickElement</span><span class="p">,</span>
+  <span class="nx">waitElementPresent</span><span class="p">,</span>
+  <span class="nx">waitElementVisible</span><span class="p">,</span>
+  <span class="nx">setValueElement</span><span class="p">,</span>
+  <span class="nx">expectElementEqualText</span><span class="p">,</span>
+  <span class="nx">pauseSleep</span><span class="p">,</span>
+  <span class="nx">scrollToElement</span><span class="p">,</span>
+  <span class="nx">setValueElementThenEnter</span><span class="p">,</span>
+  <span class="nx">expectVisible</span><span class="p">,</span>
+  <span class="nx">assertContainsText</span><span class="p">,</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>Pada file <code>base-functions.js</code> ini berisi tentang function-function yang ada pada nightwatch, kalian bisa menambahkan function lain dan explore di <a href="https://nightwatchjs.org/api/">https://nightwatchjs.org/api/</a> .</p>
+
+<p>8 . Selanjutnya buat file <code>loginFB.js</code> di dalam folder <code>features</code> dan isi dengan code ini :</p>
+
+<pre><code>Feature: Login Facebook 
+
+@clear @quit @loginFB
+Scenario: Success to login facebook
+Given I open facebook page and input email and password has been registered
+When I input email 'kaitokuroba099@yandex.com' and password '/kaitokuroba099/' already registered
+Then I successfully login to facebook 
+</code></pre>
+
+<p>Pada file ini berisi tentang <strong><em>Features, Test Scenario, dan Test Case / Test Steps</em></strong> yang nantinya akan didefine di file <code>loginFB.js</code> didalam folder steps.</p>
+
+<p>9 . Selanjutnya buat file <code>loginFB.js</code> di dalam folder <code>pages</code> dan isi dengan code ini :</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="k">const</span> <span class="p">{</span> <span class="nx">client</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;nightwatch-cucumber&#39;</span><span class="p">);</span>
+<span class="k">const</span> <span class="nx">base</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../base-functions/base-functions.js&#39;</span><span class="p">);</span>
+
+<span class="k">const</span> <span class="nx">loginFB</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">elements</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">email</span><span class="o">:</span> <span class="s1">&#39;#email&#39;</span><span class="p">,</span>
+    <span class="nx">password</span><span class="o">:</span> <span class="s1">&#39;#pass&#39;</span><span class="p">,</span>
+    <span class="nx">buttonLogin</span><span class="o">:</span> <span class="s1">&#39;#loginbutton&#39;</span><span class="p">,</span> 
+    <span class="nx">buttonToProfile</span><span class="o">:</span> <span class="s1">&#39;._1qv9&#39;</span><span class="p">,</span>
+    <span class="nx">verifyProfile</span><span class="o">:</span> <span class="s1">&#39;._2nlw&#39;</span><span class="p">,</span> <span class="c1">//equalText
+</span><span class="c1"></span>
+<span class="p">},</span>
+  <span class="nx">commands</span><span class="o">:</span> <span class="p">[{</span>
+    <span class="nx">clickButtonLogin</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">base</span><span class="p">.</span><span class="nx">clickElement</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">&#39;@buttonLogin&#39;</span><span class="p">);</span>
+    <span class="p">},</span>
+    <span class="nx">inputEmail</span><span class="p">(</span><span class="nx">email</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">base</span><span class="p">.</span><span class="nx">setValueElement</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">&#39;@email&#39;</span><span class="p">,</span> <span class="nx">email</span><span class="p">);</span>
+    <span class="p">},</span>
+    <span class="nx">inputPass</span><span class="p">(</span><span class="nx">pass</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">base</span><span class="p">.</span><span class="nx">setValueElement</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">&#39;@password&#39;</span><span class="p">,</span> <span class="nx">pass</span><span class="p">);</span>
+    <span class="p">},</span>
+    <span class="nx">verifyProfile</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">base</span><span class="p">.</span><span class="nx">expectElementEqualText</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">&#39;@verifyProfile&#39;</span><span class="p">,</span> <span class="s1">&#39;Kaito Kuroba&#39;</span><span class="p">);</span>
+    <span class="p">},</span> 
+    <span class="nx">verifyFBLoginPage</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">base</span><span class="p">.</span><span class="nx">expectVisible</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">&#39;@email&#39;</span><span class="p">)</span>
+        <span class="o">&amp;&amp;</span> <span class="nx">base</span><span class="p">.</span><span class="nx">expectVisible</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">&#39;@password&#39;</span><span class="p">)</span>
+        <span class="o">&amp;&amp;</span> <span class="nx">base</span><span class="p">.</span><span class="nx">expectVisible</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">&#39;@buttonLogin&#39;</span><span class="p">);</span>
+    <span class="p">},</span>
+    <span class="nx">clickButtonProfile</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">base</span><span class="p">.</span><span class="nx">clickElement</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">&#39;@buttonToProfile&#39;</span><span class="p">);</span>
+    <span class="p">},</span>
+  <span class="p">}],</span>
+<span class="p">};</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">loginFB</span><span class="p">;</span>
+</code></pre></div>
+<p>Pada file ini berisi tentang pendefinisian dari element selector dari page-page yang ada di facebook. Coba lihat <code>const loginFB</code> &gt;&gt; <code>elements</code> &gt;&gt; <code>email</code> , pada attribut <em>email</em> ini dia mendefinisikan element selector dari form email pada facebook login page, begitupun juga dengan <code>password, buttonLogin, dll</code>.<br />
+<img src="img/atweb/fbLoginPage.png" alt="" /></p>
+
+<p>Untuk <code>commands</code> &gt;&gt; <code>clickButtonLogin, inputEmail, dll</code> itu merupakan <strong>function</strong> yang dibuat berdasarkan kumpulan function-function yang ada di file <code>base-function.js</code> tadi.</p>
+
+<p>10 . Next buat file <code>loginFB.js</code> didalam folder <code>steps</code> dan isi dengan code dibawah ini :</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="k">const</span> <span class="p">{</span> <span class="nx">client</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;nightwatch-cucumber&#39;</span><span class="p">);</span>
+<span class="k">const</span> <span class="p">{</span> <span class="nx">Given</span><span class="p">,</span> <span class="nx">When</span><span class="p">,</span> <span class="nx">Then</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;cucumber&#39;</span><span class="p">);</span>
+
+<span class="k">const</span> <span class="nx">loginFB</span> <span class="o">=</span> <span class="nx">client</span><span class="p">.</span><span class="nx">page</span><span class="p">.</span><span class="nx">loginFB</span><span class="p">();</span>
+
+<span class="nx">Given</span><span class="p">(</span><span class="sr">/^I open facebook page and input email and password has been registered$/</span><span class="p">,</span> <span class="kr">async</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="kr">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">url</span><span class="p">(</span><span class="s1">&#39;https://www.facebook.com/&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">When</span><span class="p">(</span><span class="sr">/^I input email &#39;([^&#34;]*)&#39; and password &#39;([^&#34;]*)&#39; already registered$/</span><span class="p">,</span> <span class="kr">async</span> <span class="p">(</span><span class="nx">email</span><span class="p">,</span> <span class="nx">password</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="kr">await</span> <span class="nx">loginFB</span><span class="p">.</span><span class="nx">verifyFBLoginPage</span><span class="p">();</span>
+  <span class="kr">await</span> <span class="nx">loginFB</span><span class="p">.</span><span class="nx">inputEmail</span><span class="p">(</span><span class="nx">email</span><span class="p">);</span>
+  <span class="kr">await</span> <span class="nx">loginFB</span><span class="p">.</span><span class="nx">inputPass</span><span class="p">(</span><span class="nx">password</span><span class="p">);</span>
+  <span class="kr">await</span> <span class="nx">loginFB</span><span class="p">.</span><span class="nx">clickButtonLogin</span><span class="p">();</span>
+  <span class="kr">await</span> <span class="nx">loginFB</span><span class="p">.</span><span class="nx">clickBlackBackground</span><span class="p">();</span>
+  <span class="kr">await</span> <span class="nx">loginFB</span><span class="p">.</span><span class="nx">clickButtonProfile</span><span class="p">();</span>
+  
+<span class="p">});</span>
+
+<span class="nx">Then</span><span class="p">(</span><span class="sr">/^I successfully login to facebook$/</span><span class="p">,</span> <span class="kr">async</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">loginFB</span><span class="p">.</span><span class="nx">verifyProfile</span><span class="p">()</span>
+<span class="p">});</span>
+</code></pre></div>
+<p>Pada file ini tuh menginisiasi / menterjemahkan peritah-perintah dari file <code>loginFB.js</code> yang ada di folder <code>features</code></p>
+
+<p>11 . Lanjut bikin file <code>hooks.js</code> didalam folder <code>test</code> dan copy code dibawah ini :</p>
+
+<blockquote>
+<p>const { client } = require(&lsquo;nightwatch-cucumber&rsquo;);
+const { After, Before } = require(&lsquo;cucumber&rsquo;);</p>
+
+<p>/*
+** Run before tag @clear&gt;
+*/
+Before({ tags: &lsquo;@clear&rsquo; }, () =&gt; client.execute(<code>
+        localStorage.clear();
+        sessionStorage.clear();
+</code>`.deleteCookies().refresh());</p>
+
+<p>/*
+** Run after tag @quit
+*/
+After({ tags: &lsquo;@quit&rsquo; }, () =&gt; client.end());</p>
+</blockquote>
+
+<p>file ini berfungsi untuk membersihkan local dan session storage sebelum menjalankan automationnya.</p>
+
+<p>nb: hapus salah satu tanda (`) sebelum <em>.deleteCookies</em></p>
+
+<p>12 . Tambahhkan file <code>nightwatch-selenium.conf.js</code> dan copy code dibawah ini :</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="cm">/* eslint no-unused-vars: off */</span>
+<span class="cm">/* global env */</span>
+<span class="k">const</span> <span class="nx">nightwatchCucumber</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;nightwatch-cucumber&#39;</span><span class="p">);</span>
+<span class="k">const</span> <span class="nx">chromedriverPath</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;chromedriver&#39;</span><span class="p">).</span><span class="nx">path</span><span class="p">;</span>
+<span class="k">const</span> <span class="nx">seleniumServerPath</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;selenium-server&#39;</span><span class="p">).</span><span class="nx">path</span><span class="p">;</span>
+<span class="k">const</span> <span class="nx">env</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;dotenv&#39;</span><span class="p">).</span><span class="nx">config</span><span class="p">();</span>
+
+<span class="nx">nightwatchCucumber</span><span class="p">({</span>
+  <span class="nx">nightwatchOutput</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">cucumberArgs</span><span class="o">:</span> <span class="p">[</span>
+    <span class="s1">&#39;--require&#39;</span><span class="p">,</span> <span class="s1">&#39;tests/hooks.js&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;--require&#39;</span><span class="p">,</span> <span class="s1">&#39;tests/steps&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;--format&#39;</span><span class="p">,</span> <span class="s1">&#39;json:reports/cucumber.json&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;--format&#39;</span><span class="p">,</span> <span class="s1">&#39;node_modules/cucumber-pretty&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;tests/features&#39;</span><span class="p">,</span>
+  <span class="p">],</span>
+<span class="p">});</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">output_folder</span><span class="o">:</span> <span class="s1">&#39;reports&#39;</span><span class="p">,</span>
+  <span class="nx">page_objects_path</span><span class="o">:</span> <span class="s1">&#39;tests/pages&#39;</span><span class="p">,</span>
+  <span class="nx">custom_assertions_path</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+  <span class="nx">live_output</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="nx">disable_colors</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="nx">selenium</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">start_process</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">server_path</span><span class="o">:</span> <span class="nx">seleniumServerPath</span><span class="p">,</span>
+    <span class="nx">cli_args</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s1">&#39;webdriver.chrome.driver&#39;</span><span class="o">:</span> <span class="nx">chromedriverPath</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="nx">host</span><span class="o">:</span> <span class="s1">&#39;127.0.0.1&#39;</span><span class="p">,</span>
+    <span class="nx">port</span><span class="o">:</span> <span class="mi">4444</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="nx">test_settings</span><span class="o">:</span> <span class="p">{</span>
+    <span class="k">default</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">globals</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">url</span><span class="o">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">PRODUCTION_WEB_BASE_URL</span><span class="p">,</span>
+      <span class="p">},</span>
+      <span class="nx">screenshots</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">enabled</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nx">on_failure</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;screenshots&#39;</span><span class="p">,</span>
+      <span class="p">},</span>
+      <span class="nx">desiredCapabilities</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">browserName</span><span class="o">:</span> <span class="s1">&#39;chrome&#39;</span><span class="p">,</span>
+        <span class="nx">javascriptEnabled</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nx">chromeOptions</span><span class="o">:</span> <span class="p">{</span>
+          <span class="nx">args</span><span class="o">:</span> <span class="p">[</span>
+            <span class="s1">&#39;start-maximized&#39;</span><span class="p">,</span>
+          <span class="p">],</span>
+        <span class="p">},</span>
+        <span class="nx">acceptSslCerts</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="p">},</span>
+    <span class="p">},</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>Pada file ini tuh adalah config antara nightwatchjs dan selenium.</p>
+
+<p>13 . Sebelum menjalankan testnya, pada package.json ganti attribut <code>scripts</code>, menjadi seperti ini :</p>
+
+<pre><code>  &quot;scripts&quot;: {
+    &quot;test&quot;: &quot;nightwatch -c nightwatch-selenium.conf.js&quot;
+  },
+</code></pre>
+
+<p>14 . Last stepnya adalah menjalankan testnya dengan perintah <code>npm run test</code>, jika test <em>pass</em> maka akan ada result seperti ini :<br />
+<img src="/img/atweb/testPass.png" alt="" /></p>
+
+<p>Sekian sharing-sharing pengingat dari saya, Thanks. Best Regards :)</p>
+
+</article>
+<nav class="no-print post-nav">
+
+	<a class="prev-post" href="https://setyokun.github.io/post/apa-aja-yang-harus-divalidasi-saat-testing-api-/">
+		<img class="icon-text" src="/img/prev.svg"/>Apa aja harus divalidasi / cek saat Testing API ?</a>
+
+
+</nav>
+
+
+
+
+			<hr class="sep" />
+		</main>
+		<footer class="container no-print">
+			<div class="u-footer">
+				
+<a href="mailto:piscaprasetyoaw@gmail.com"><img class="icon-social" src="/img/email.svg" alt="Email Me!"/></a>
+
+
+<a href="https://github.com/setyokun/"><img class="icon-social" src="/img/github.svg" alt="Github"/></a>
+
+
+<a href="https://www.linkedin.com/in/pisca-prasetyo-away-wecan/"><img class="icon-social" src="/img/linkedin.svg" alt="Linkedin"/></a>
+
+<a href="https://setyokun.github.io/index.xml" target="_blank"><img class="icon-social" src="/img/feed.svg" alt="Feed"></a>
+
+				<p>
+					
+					
+					
+					
+					&copy; 2019 Setyokun
+					
+					
+				</p>
+				
+				<a href="#brand">
+					<img class="icon-text" src="/img/toup.svg" alt="To Up"/>
+					<span>Back to Up</span>
+				</a>
+				
+			</div>
+		</footer>
+		
+	</body>
+</html>
+
