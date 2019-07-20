@@ -6,10 +6,21 @@
     <description>Recent content on Setyokun Note&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2019 Setyokun</copyright>
-    <lastBuildDate>Wed, 17 Jul 2019 14:58:43 +0700</lastBuildDate>
+    <lastBuildDate>Fri, 19 Jul 2019 14:12:25 +0700</lastBuildDate>
     
 	<atom:link href="https://setyokun.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Cara Testing Rest API (GET, POST, PUT, dan DELETE) dengan Postman</title>
+      <link>https://setyokun.github.io/post/postman/</link>
+      <pubDate>Fri, 19 Jul 2019 14:12:25 +0700</pubDate>
+      
+      <guid>https://setyokun.github.io/post/postman/</guid>
+      <description>Kali ini kita akan membahas bagaimana testing Rest API dengan Postman. Jadi ada 4 method yang sering digunakan dalam testing API yaitu GET, POST, PUT, dan DELETE. Pertama-tama kita buka Postman dan masukkan endpoint beserta list API yang sudah tersedia di https://reqres.in/ ini. Sung mari kita coba :
+1 . GET
+Pada method ini tuh untuk mengambil data. Ganti Fokus ke Postman, ganti methodnya seperti nomor (1) di bawah ini :</description>
+    </item>
     
     <item>
       <title>Step by step membuat Automation Web dengan Nightwatch JS</title>

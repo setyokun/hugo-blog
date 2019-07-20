@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="generator" content="Hugo 0.55.0" />
+		<title>Cara Testing Rest API (GET, POST, PUT, dan DELETE) dengan Postman - Setyokun Note&#39;s</title>
+
+		<meta name="description" content="Kali ini kita akan membahas bagaimana testing Rest API dengan Postman. Jadi ada 4 method yang sering digunakan dalam testing API yaitu GET, POST, PUT, dan DELETE. Pertama-tama kita buka Postman dan masukkan endpoint beserta list API yang sudah tersedia di https://reqres.in/ ini. Sung mari kita coba :
+1 . GET
+Pada method ini tuh untuk mengambil data. Ganti Fokus ke Postman, ganti methodnya seperti nomor (1) di bawah ini :">
+
+
+		
+		
+		
+		<link rel="stylesheet" href="/css/ui.min.css"/>
+		
+		
+		
+
+		<link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono|Lato|Raleway">
+
+		
+
+		<style>
+	a { color: #000000; }
+	blockquote {
+		border-left-color: #000000;
+		border-right-color: #000000; }
+	.bar a:hover {
+		color: #000000;
+		text-decoration: none; }
+	.sep {
+		margin-top: 2rem;
+		margin-bottom: 1rem;
+		margin-left:0;
+		width: 24rem;
+		border-top: 2px solid #000000; }
+</style>
+
+	</head>
+
+<body>
+<header class="container no-print">
+	<div class="u-header">
+		<nav class="bar">
+	<ul><li>
+			<a href="/">
+				<img class="icon-text" src="/img/prev.svg"/>
+			</a>
+		</li><li><a href="/about">About</a></li><li><a href="/post/">Blog</a></li></ul>
+</nav>
+
+	</div>
+</header>
+<main class="container">
+
+<article>
+	<header><hgroup id="brand">
+	<h1>Cara Testing Rest API (GET, POST, PUT, dan DELETE) dengan Postman</h1>
+	<h5>
+		
+		<time datetime="2019-07-19 14:12:25 &#43;0700 WIB">Jul 19, 2019</time>
+		<span class="no-print">
+			<span>
+	</h5>
+	
+</hgroup>
+<hr class="sep" />
+</header>
+	<p>Kali ini kita akan membahas bagaimana testing Rest API dengan Postman. Jadi ada 4 method yang sering digunakan dalam testing API yaitu GET, POST, PUT, dan DELETE. Pertama-tama kita buka Postman dan masukkan endpoint beserta list API yang sudah tersedia di <a href="https://reqres.in/">https://reqres.in/</a> ini. Sung mari kita coba :</p>
+
+<p><strong>1 . GET</strong><br />
+Pada method ini tuh untuk mengambil data. Ganti Fokus ke Postman, ganti methodnya seperti nomor (1) di bawah ini :</p>
+
+<p><img src="/img/postman/postmanGET.png" alt="" /></p>
+
+<p>Selanjutnya copy URL <code>https://reqres.in/api/users/2</code> ini dan masukkan ke Postman seperti pada nomor (2). Kemudian Klik Send seperti pada nomor (3) dan validasi response dari hasil requestnya pada nomor (4) dan (5). Pastikan response pada nomor (4) dan (5) seperti response yang ada pada web <a href="https://reqres.in/">https://reqres.in/</a> di bawah ini nomor (3) dan (4) :</p>
+
+<p><img src="/img/postman/reqresGET.png" alt="" /></p>
+
+<p><strong>2 . POST</strong><br />
+Pada method ini tuh untuk menambahkan data. Kemudian ganti methodnya seperti nomor (1) di bawah ini :</p>
+
+<p><img src="/img/postman/postmanPOST1.png" alt="" /></p>
+
+<p>Selanjutnya copy URL <code>https://reqres.in/api/users</code> ini dan masukkan ke Postman seperti pada nomor (2). Trus klik <code>body</code> (nomor 3) &gt;&gt; <code>raw</code> (nomor 4) &gt;&gt; <code>JSON</code> (nomor 5) &gt;&gt; masukkan request bodynya juga (nomor 6)</p>
+
+<pre><code>{
+    &quot;name&quot;: &quot;morpheus&quot;,
+    &quot;job&quot;: &quot;leader&quot;
+}
+</code></pre>
+
+<p>Lanjut di Send (nomor 7).
+Dan akan mendapat response seperti gambar :
+<img src="/img/postman/postmanPOST2.png" alt="" /></p>
+
+<p>Pastikan Response pada nomor 1 dan 2 diatas sama seperti response yang ada pada web <a href="https://reqres.in/">https://reqres.in/</a> di bawah ini pada nomor 3 dan 4 :</p>
+
+<p><img src="/img/postman/reqresPOST.png" alt="" /></p>
+
+<p><strong>3 . PUT</strong><br />
+Pada method ini tuh untuk mengupdate data. Kemudian ganti methodnya seperti nomor (1) di bawah ini :</p>
+
+<p><img src="/img/postman/postmanPUT.png" alt="" /></p>
+
+<p>Selanjutnya copy URL <code>https://reqres.in/api/users/2</code> ini dan masukkan ke Postman seperti pada nomor (2). Trus klik <code>body</code> (nomor 3) &gt;&gt; <code>x-www-form-urlencoded</code> (nomor 4) &gt;&gt; masukkan key dan valuenya (nomor 5) seperti gambar diatas.</p>
+
+<p>Trus klik send (nomor 6) dan validasi response dari nomor 7 dan 8. Pastikan Responsenya sama seperti response yang ada pada web <a href="https://reqres.in/">https://reqres.in/</a> di bawah ini pada nomor 3 dan 4 :</p>
+
+<p><img src="/img/postman/reqresPUT.png" alt="" /></p>
+
+<p><strong>4 . DELETE</strong><br />
+Pada method ini tuh untuk meng-delete data. Kemudian ganti methodnya seperti nomor (1) di bawah ini :</p>
+
+<p><img src="/img/postman/postmanDELETE.png" alt="" /></p>
+
+<p>Selanjutnya copy URL <code>https://reqres.in/api/users/2</code> ini dan masukkan ke Postman seperti pada nomor (2) &gt;&gt; klik Send (Nomor 3). Kemudian validasi response dari nomor 4. Pastikan Responsenya sama seperti response yang ada pada web <a href="https://reqres.in/">https://reqres.in/</a> di bawah ini pada nomor 3:</p>
+
+<p><img src="/img/postman/reqresDELETE.png" alt="" /></p>
+
+<p>Sekian dari saya, thanks !</p>
+
+</article>
+<nav class="no-print post-nav">
+
+	<a class="prev-post" href="https://setyokun.github.io/post/step-by-step-membuat-automation-web-dengan-nightwatch-js/">
+		<img class="icon-text" src="/img/prev.svg"/>Step by step membuat Automation Web dengan Nightwatch JS</a>
+
+
+</nav>
+
+
+
+
+			<hr class="sep" />
+		</main>
+		<footer class="container no-print">
+			<div class="u-footer">
+				
+<a href="mailto:piscaprasetyoaw@gmail.com"><img class="icon-social" src="/img/email.svg" alt="Email Me!"/></a>
+
+
+<a href="https://github.com/setyokun/"><img class="icon-social" src="/img/github.svg" alt="Github"/></a>
+
+
+<a href="https://www.linkedin.com/in/pisca-prasetyo-away-wecan/"><img class="icon-social" src="/img/linkedin.svg" alt="Linkedin"/></a>
+
+<a href="https://setyokun.github.io/index.xml" target="_blank"><img class="icon-social" src="/img/feed.svg" alt="Feed"></a>
+
+				<p>
+					
+					
+					
+					
+					&copy; 2019 Setyokun
+					
+					
+				</p>
+				
+				<a href="#brand">
+					<img class="icon-text" src="/img/toup.svg" alt="To Up"/>
+					<span>Back to Up</span>
+				</a>
+				
+			</div>
+		</footer>
+		
+	</body>
+</html>
+
