@@ -6,10 +6,24 @@
     <description>Recent content in Post on Setyokun Note&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2019 Setyokun</copyright>
-    <lastBuildDate>Thu, 01 Aug 2019 15:06:53 +0700</lastBuildDate>
+    <lastBuildDate>Fri, 30 Aug 2019 15:06:53 +0700</lastBuildDate>
     
 	<atom:link href="https://setyokun.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Update IPA iOS di iTunes Connect</title>
+      <link>https://setyokun.github.io/post/update-ipa-ios-di-itunes-connect/</link>
+      <pubDate>Fri, 30 Aug 2019 15:06:53 +0700</pubDate>
+      
+      <guid>https://setyokun.github.io/post/update-ipa-ios-di-itunes-connect/</guid>
+      <description>Hay gengs, kali ini saya akan share tentang bagaimana cara update IPA iOS di iTunes Connect :
+1 . Buka iTunesConnect dan masukkan credential yang udah terdaftar.
+2 . Pilih My Apps -&amp;gt; Pilih Apps mana yang ingin di Update
+3 . Klik Version or Platform dan pilih iOS
+4 . Input Version number terbaru yang ingin diupdate ke Appstore -&amp;gt; klik Create
+5 . Input Whats new in this version and input App Reviews and Screenshots (saat input image disini jangan lupa sediakan image yang ukurannya sesuai dengan guide lines yang ditentukan oleh iTunes Connect)</description>
+    </item>
     
     <item>
       <title>Update APK di Google Play Console</title>
