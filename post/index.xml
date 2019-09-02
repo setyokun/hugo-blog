@@ -6,10 +6,21 @@
     <description>Recent content in Post on Setyokun Note&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2019 Setyokun</copyright>
-    <lastBuildDate>Fri, 30 Aug 2019 15:06:53 +0700</lastBuildDate>
+    <lastBuildDate>Mon, 02 Sep 2019 10:01:35 +0700</lastBuildDate>
     
 	<atom:link href="https://setyokun.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Cara mengajukan Expedited iOS Apps agar segera Release di Appstore</title>
+      <link>https://setyokun.github.io/post/expeditedios/</link>
+      <pubDate>Mon, 02 Sep 2019 10:01:35 +0700</pubDate>
+      
+      <guid>https://setyokun.github.io/post/expeditedios/</guid>
+      <description>Hey bro ..do! Pagi ini saya akan share gimana cara mengajukan Expedited iOS Apps agar segera release di Appstore
+1 . Pertama, masuk ke page ini Expedite iOS , kemudian kalian akan diarahkan untuk login terlebih dahulu dengan akun itunesconnect yang kalian punya. Setelah masuk akan masuk ke page seperti dibawah ini :
+2 . Pada Contact Information input Phone Country Code dan Phone Number, untuk Name, Email, dan Organization biasanya sudah default ke isi.</description>
+    </item>
     
     <item>
       <title>Update IPA iOS di iTunes Connect</title>
