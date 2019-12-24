@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="generator" content="Hugo 0.55.0" />
+		<title>API Testing with Jest - Setyokun Note&#39;s</title>
+
+		<meta name="description" content="Step by Step Memulai API Testing dengan Jest 1 . Install Node.js (sudo apt-get install nodejs - ubuntu) 2. bikin folder -&gt; masuk ke ide kesayanganmu (saya pake vscode) 3. (ctrl &#43; shift &#43; ~ ) buat masuk ke terminal vscode 4. npm init -&gt; kemudian isi name, version, desc, etc -&gt; setelah kelar ngisi biasanya akan muncul file package.json 5. install test framework jest -&gt; npm install jest &ndash;save-dev 6.">
+
+
+		
+		
+		
+		<link rel="stylesheet" href="/css/ui.min.css"/>
+		
+		
+		
+
+		<link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono|Lato|Raleway">
+
+		
+
+		<style>
+	a { color: #000000; }
+	blockquote {
+		border-left-color: #000000;
+		border-right-color: #000000; }
+	.bar a:hover {
+		color: #000000;
+		text-decoration: none; }
+	.sep {
+		margin-top: 2rem;
+		margin-bottom: 1rem;
+		margin-left:0;
+		width: 24rem;
+		border-top: 2px solid #000000; }
+</style>
+
+	</head>
+
+<body>
+<header class="container no-print">
+	<div class="u-header">
+		<nav class="bar">
+	<ul><li>
+			<a href="/">
+				<img class="icon-text" src="/img/prev.svg"/>
+			</a>
+		</li><li><a href="/about">About</a></li><li><a href="/post/">Blog</a></li></ul>
+</nav>
+
+	</div>
+</header>
+<main class="container">
+
+<article>
+	<header><hgroup id="brand">
+	<h1>API Testing with Jest</h1>
+	<h5>
+		
+		<time datetime="2019-12-24 10:52:50 &#43;0700 WIB">Dec 24, 2019</time>
+		<span class="no-print">
+			<span>
+	</h5>
+	
+</hgroup>
+<hr class="sep" />
+</header>
+	
+
+<h3 id="step-by-step-memulai-api-testing-dengan-jest">Step by Step Memulai API Testing dengan Jest</h3>
+
+<p>1 . Install Node.js (sudo apt-get install nodejs - ubuntu)
+2. bikin folder -&gt; masuk ke ide kesayanganmu (saya pake vscode)
+3. (ctrl + shift + ~ ) buat masuk ke terminal vscode
+4. npm init -&gt; kemudian isi name, version, desc, etc -&gt; setelah kelar ngisi biasanya akan muncul file package.json
+5. install test framework jest -&gt; npm install jest &ndash;save-dev
+6. npm install -g npx -&gt; npx itu buat runner package yang ada di node_modules
+7. npx jest &ndash;init -&gt; nantinya akan muncul aggrement kek dibawah ini: <br />
+✔ Would you like to use Jest when running &ldquo;test&rdquo; script in &ldquo;package.json&rdquo;? … yes <br />
+✔ Choose the test environment that will be used for testing › node <br />
+✔ Do you want Jest to add coverage reports? … yes <br />
+✔ Automatically clear mock calls and instances between every test? … yes <br />
+setelah itu , jest.config.js akan muncul
+8. npm install supertest &ndash;save -&gt; supertest itu buat handle http request
+(request line : post, get, put, etc
+request header : content-type, accept, etc
+requset body : biasanya dalam bentuk json/xml)
+9. touch .env -&gt; membuat file .env , file ini untuk menampung envirotment/baseUrl dari API. set baseUrl=<a href="https://reqres.in/">https://reqres.in/</a> didalam folder .env
+10. npm install dotenv &ndash;save -&gt; dotenv ini untuk me-loads file .env yang tadi kita buat
+11. npm install &ndash;save-dev jest-json-schema -&gt; jest-json-schema ini untuk ngehandle expect dari schema validator
+12. npm install jest-html-reporter &ndash;save-dev -&gt; untuk report hasil test apinya
+tambahkan code ini :
+   reporters: [
+     &lsquo;default&rsquo;,
+     &lsquo;jest-html-reporters&rsquo;
+   ],
+   dan
+   uncomment //coverageDirectory: &ldquo;coverage&rdquo;,
+  pada file jest.config.js untuk integrate report htmlnya
+12. Persiapan sudah selesai - selanjutnya lanjut Coding !</p>
+
+</article>
+<nav class="no-print post-nav">
+
+	<a class="prev-post" href="https://setyokun.github.io/post/expeditedios/">
+		<img class="icon-text" src="/img/prev.svg"/>Cara mengajukan Expedited iOS agar segera Release di Appstore</a>
+
+
+</nav>
+
+
+
+
+			<hr class="sep" />
+		</main>
+		<footer class="container no-print">
+			<div class="u-footer">
+				
+<a href="mailto:piscaprasetyoaw@gmail.com"><img class="icon-social" src="/img/email.svg" alt="Email Me!"/></a>
+
+
+<a href="https://github.com/setyokun/"><img class="icon-social" src="/img/github.svg" alt="Github"/></a>
+
+
+<a href="https://www.linkedin.com/in/pisca-prasetyo-away-wecan/"><img class="icon-social" src="/img/linkedin.svg" alt="Linkedin"/></a>
+
+<a href="https://setyokun.github.io/index.xml" target="_blank"><img class="icon-social" src="/img/feed.svg" alt="Feed"></a>
+
+				<p>
+					
+					
+					
+					
+					&copy; 2019 Setyokun
+					
+					
+				</p>
+				
+				<a href="#brand">
+					<img class="icon-text" src="/img/toup.svg" alt="To Up"/>
+					<span>Back to Up</span>
+				</a>
+				
+			</div>
+		</footer>
+		
+	</body>
+</html>
+

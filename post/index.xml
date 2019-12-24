@@ -6,10 +6,19 @@
     <description>Recent content in Post on Setyokun Note&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2019 Setyokun</copyright>
-    <lastBuildDate>Mon, 02 Sep 2019 10:01:35 +0700</lastBuildDate>
+    <lastBuildDate>Tue, 24 Dec 2019 10:52:50 +0700</lastBuildDate>
     
 	<atom:link href="https://setyokun.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>API Testing with Jest</title>
+      <link>https://setyokun.github.io/post/api-test-with-jest/</link>
+      <pubDate>Tue, 24 Dec 2019 10:52:50 +0700</pubDate>
+      
+      <guid>https://setyokun.github.io/post/api-test-with-jest/</guid>
+      <description>Step by Step Memulai API Testing dengan Jest 1 . Install Node.js (sudo apt-get install nodejs - ubuntu) 2. bikin folder -&amp;gt; masuk ke ide kesayanganmu (saya pake vscode) 3. (ctrl + shift + ~ ) buat masuk ke terminal vscode 4. npm init -&amp;gt; kemudian isi name, version, desc, etc -&amp;gt; setelah kelar ngisi biasanya akan muncul file package.json 5. install test framework jest -&amp;gt; npm install jest &amp;ndash;save-dev 6.</description>
+    </item>
     
     <item>
       <title>Cara mengajukan Expedited iOS agar segera Release di Appstore</title>
