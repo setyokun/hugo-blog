@@ -6,7 +6,7 @@
 		<meta name="generator" content="Hugo 0.55.0" />
 		<title>API Testing with Jest - Setyokun Note&#39;s</title>
 
-		<meta name="description" content="Step by Step Memulai API Testing dengan Jest 1 . Install Node.js (sudo apt-get install nodejs - ubuntu) 2. bikin folder -&gt; masuk ke ide kesayanganmu (saya pake vscode) 3. (ctrl &#43; shift &#43; ~ ) buat masuk ke terminal vscode 4. npm init -&gt; kemudian isi name, version, desc, etc -&gt; setelah kelar ngisi biasanya akan muncul file package.json 5. install test framework jest -&gt; npm install jest &ndash;save-dev 6.">
+		<meta name="description" content="Step by Step Memulai API Testing dengan Jest 1 . Install Node.js (sudo apt-get install nodejs - ubuntu) 2. bikin folder -&gt; masuk ke ide kesayanganmu (saya pake vscode) 3. ctrl &#43; shift &#43; ~ buat masuk ke terminal vscode 4. npm init &gt;&gt; kemudian isi name, version, desc, etc -&gt; setelah kelar ngisi biasanya akan muncul file package.json 5. npm install jest --save-dev &gt;&gt; install test framework jest 6.">
 
 
 		
@@ -71,35 +71,150 @@
 
 <h3 id="step-by-step-memulai-api-testing-dengan-jest">Step by Step Memulai API Testing dengan Jest</h3>
 
-<p>1 . Install Node.js (sudo apt-get install nodejs - ubuntu) <br />
-2. bikin folder -&gt; masuk ke ide kesayanganmu (saya pake vscode)  <br />
-3. (ctrl + shift + ~ ) buat masuk ke terminal vscode <br />
-4. npm init -&gt; kemudian isi name, version, desc, etc -&gt; setelah kelar ngisi biasanya akan muncul file package.json  <br />
-5. install test framework jest -&gt; npm install jest &ndash;save-dev <br />
-6. npm install -g npx -&gt; npx itu buat runner package yang ada di node_modules <br />
-7. npx jest &ndash;init -&gt; nantinya akan muncul aggrement kek dibawah ini: <br />
-✔ Would you like to use Jest when running &ldquo;test&rdquo; script in &ldquo;package.json&rdquo;? … yes <br />
-✔ Choose the test environment that will be used for testing › node <br />
-✔ Do you want Jest to add coverage reports? … yes <br />
-✔ Automatically clear mock calls and instances between every test? … yes <br />
-setelah itu , jest.config.js akan muncul <br />
-8. npm install supertest &ndash;save -&gt; supertest itu buat handle http request :  \
-(request line : post, get, put, etc  <br />
-request header : content-type, accept, etc  <br />
-requset body : biasanya dalam bentuk json/xml)  <br />
-9. touch .env -&gt; membuat file .env , file ini untuk menampung envirotment/baseUrl dari API. set baseUrl=<a href="https://reqres.in/">https://reqres.in/</a> didalam folder .env <br />
-10. npm install dotenv &ndash;save -&gt; dotenv ini untuk me-loads file .env yang tadi kita buat <br />
-11. npm install &ndash;save-dev jest-json-schema -&gt; jest-json-schema ini untuk ngehandle expect dari schema validator  <br />
-12. npm install jest-html-reporter &ndash;save-dev -&gt; untuk report hasil test apinya  <br />
-tambahkan code ini :  \
-   reporters: [ <br />
-     &lsquo;default&rsquo;,  <br />
-     &lsquo;jest-html-reporters&rsquo;  <br />
-   ],  <br />
-   dan  <br />
-   uncomment //coverageDirectory: &ldquo;coverage&rdquo;,  <br />
-  pada file jest.config.js untuk integrate report htmlnya \
-12. Persiapan sudah selesai - selanjutnya lanjut Coding ! </p>
+<p>1 . Install Node.js (sudo apt-get install nodejs - ubuntu)
+2. bikin folder -&gt; masuk ke ide kesayanganmu (saya pake vscode)
+3. <code>ctrl + shift + ~</code> buat masuk ke terminal vscode
+4. <code>npm init</code> &gt;&gt; kemudian isi name, version, desc, etc -&gt; setelah kelar ngisi biasanya akan muncul file package.json
+5. <code>npm install jest --save-dev</code> &gt;&gt; install test framework jest
+6. <code>npm install -g npx</code> &gt;&gt; npx itu buat runner package yang ada di node_modules
+7. <code>npx jest --init</code> &gt;&gt; nantinya akan muncul aggrement kek dibawah ini: <br />
+<code>✔ Would you like to use Jest when running &quot;test&quot; script in &quot;package.json&quot;? … yes</code> <br />
+<code>✔ Choose the test environment that will be used for testing › node</code> <br />
+<code>✔ Do you want Jest to add coverage reports? … yes</code> <br />
+<code>✔ Automatically clear mock calls and instances between every test? … yes</code> <br />
+setelah itu , jest.config.js akan muncul
+8. <code>npm install supertest --save</code> &gt;&gt; supertest itu buat handle http request
+(request line : post, get, put, etc
+request header : content-type, accept, etc
+requset body : biasanya dalam bentuk json/xml)
+9. <code>touch .env</code> &gt;&gt; membuat file .env , file ini untuk menampung envirotment/baseUrl dari API. oh iya disini kita pake reqres.in untuk rest-apinya ya. kemudian set <code>baseUrl=https://reqres.in/</code> didalam folder .env
+10. <code>npm install dotenv --save</code> &gt;&gt; dotenv ini untuk me-loads file .env yang tadi kita buat
+11. <code>npm install --save-dev jest-json-schema</code> &gt;&gt; jest-json-schema ini untuk ngehandle expect dari schema validator
+12. <code>npm install jest-html-reporters --save-dev</code> &gt;&gt; untuk report hasil test apinya
+tambahkan code ini :</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js">   <span class="nx">reporters</span><span class="o">:</span> <span class="p">[</span>
+     <span class="s1">&#39;default&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;jest-html-reporters&#39;</span>
+   <span class="p">],</span>
+</code></pre></div>
+<p>dan uncomment <code>//coverageDirectory: &quot;coverage&quot;,</code><br />
+  pada file jest.config.js untuk integrate report htmlnya <br />
+13. tambahkan config ini <code>&quot;report&quot;: &quot;google-chrome jest_html_reporters.html&quot;</code> didalam file <em>package.json</em> dibawah code ini<code>&quot;test&quot;: &quot;jest&quot;,</code><br />
+14. bikin folder <em><strong>tests</strong></em> kemudian didalamnya bikin file <em>getUser.js</em> <br />
+15. salin code dibawah ini : </p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">//endpoint 
+</span><span class="c1"></span><span class="k">const</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;supertest&#39;</span><span class="p">);</span>
+<span class="k">const</span> <span class="nx">env</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;dotenv&#39;</span><span class="p">).</span><span class="nx">config</span><span class="p">();</span>
+<span class="k">const</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">request</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">baseUrl</span><span class="p">);</span>
+<span class="k">const</span> <span class="nx">getUser</span> <span class="o">=</span>  <span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">api</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="sb">`/api/users/</span><span class="si">${</span><span class="nx">id</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+
+<span class="c1">//jest json schema
+</span><span class="c1"></span><span class="k">const</span> <span class="nx">matchers</span>  <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;jest-json-schema&#39;</span><span class="p">).</span><span class="nx">matchers</span><span class="p">;</span>
+<span class="nx">expect</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">matchers</span><span class="p">);</span>
+
+<span class="c1">//schema validator &gt;&gt; schema validator ini bisa kalian generate dari web ini : https://jsonschema.net/
+</span><span class="c1"></span><span class="k">const</span> <span class="nx">schemaUser</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&#34;definitions&#34;</span><span class="o">:</span> <span class="p">{},</span>
+    <span class="s2">&#34;type&#34;</span><span class="o">:</span> <span class="s2">&#34;object&#34;</span><span class="p">,</span>
+    <span class="s2">&#34;title&#34;</span><span class="o">:</span> <span class="s2">&#34;The Root Schema&#34;</span><span class="p">,</span>
+    <span class="s2">&#34;required&#34;</span><span class="o">:</span> <span class="p">[</span>
+      <span class="s2">&#34;data&#34;</span>
+    <span class="p">],</span>
+    <span class="s2">&#34;properties&#34;</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">&#34;data&#34;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&#34;$id&#34;</span><span class="o">:</span> <span class="s2">&#34;#/properties/data&#34;</span><span class="p">,</span>
+        <span class="s2">&#34;type&#34;</span><span class="o">:</span> <span class="s2">&#34;object&#34;</span><span class="p">,</span>
+        <span class="s2">&#34;title&#34;</span><span class="o">:</span> <span class="s2">&#34;The Data Schema&#34;</span><span class="p">,</span>
+        <span class="s2">&#34;required&#34;</span><span class="o">:</span> <span class="p">[</span>
+          <span class="s2">&#34;id&#34;</span><span class="p">,</span>
+          <span class="s2">&#34;email&#34;</span><span class="p">,</span>
+          <span class="s2">&#34;first_name&#34;</span><span class="p">,</span>
+          <span class="s2">&#34;last_name&#34;</span><span class="p">,</span>
+          <span class="s2">&#34;avatar&#34;</span>
+        <span class="p">],</span>
+        <span class="s2">&#34;properties&#34;</span><span class="o">:</span> <span class="p">{</span>
+          <span class="s2">&#34;id&#34;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&#34;$id&#34;</span><span class="o">:</span> <span class="s2">&#34;#/properties/data/properties/id&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;type&#34;</span><span class="o">:</span> <span class="s2">&#34;integer&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;title&#34;</span><span class="o">:</span> <span class="s2">&#34;The Id Schema&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;default&#34;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s2">&#34;examples&#34;</span><span class="o">:</span> <span class="p">[</span>
+              <span class="mi">2</span>
+            <span class="p">]</span>
+          <span class="p">},</span>
+          <span class="s2">&#34;email&#34;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&#34;$id&#34;</span><span class="o">:</span> <span class="s2">&#34;#/properties/data/properties/email&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;type&#34;</span><span class="o">:</span> <span class="s2">&#34;string&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;title&#34;</span><span class="o">:</span> <span class="s2">&#34;The Email Schema&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;default&#34;</span><span class="o">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;examples&#34;</span><span class="o">:</span> <span class="p">[</span>
+              <span class="s2">&#34;janet.weaver@reqres.in&#34;</span>
+            <span class="p">],</span>
+            <span class="s2">&#34;pattern&#34;</span><span class="o">:</span> <span class="s2">&#34;^(.*)$&#34;</span>
+          <span class="p">},</span>
+          <span class="s2">&#34;first_name&#34;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&#34;$id&#34;</span><span class="o">:</span> <span class="s2">&#34;#/properties/data/properties/first_name&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;type&#34;</span><span class="o">:</span> <span class="s2">&#34;string&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;title&#34;</span><span class="o">:</span> <span class="s2">&#34;The First_name Schema&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;default&#34;</span><span class="o">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;examples&#34;</span><span class="o">:</span> <span class="p">[</span>
+              <span class="s2">&#34;Janet&#34;</span>
+            <span class="p">],</span>
+            <span class="s2">&#34;pattern&#34;</span><span class="o">:</span> <span class="s2">&#34;^(.*)$&#34;</span>
+          <span class="p">},</span>
+          <span class="s2">&#34;last_name&#34;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&#34;$id&#34;</span><span class="o">:</span> <span class="s2">&#34;#/properties/data/properties/last_name&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;type&#34;</span><span class="o">:</span> <span class="s2">&#34;string&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;title&#34;</span><span class="o">:</span> <span class="s2">&#34;The Last_name Schema&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;default&#34;</span><span class="o">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;examples&#34;</span><span class="o">:</span> <span class="p">[</span>
+              <span class="s2">&#34;Weaver&#34;</span>
+            <span class="p">],</span>
+            <span class="s2">&#34;pattern&#34;</span><span class="o">:</span> <span class="s2">&#34;^(.*)$&#34;</span>
+          <span class="p">},</span>
+          <span class="s2">&#34;avatar&#34;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&#34;$id&#34;</span><span class="o">:</span> <span class="s2">&#34;#/properties/data/properties/avatar&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;type&#34;</span><span class="o">:</span> <span class="s2">&#34;string&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;title&#34;</span><span class="o">:</span> <span class="s2">&#34;The Avatar Schema&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;default&#34;</span><span class="o">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;examples&#34;</span><span class="o">:</span> <span class="p">[</span>
+              <span class="s2">&#34;https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg&#34;</span>
+            <span class="p">],</span>
+            <span class="s2">&#34;pattern&#34;</span><span class="o">:</span> <span class="s2">&#34;^(.*)$&#34;</span>
+          <span class="p">}</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+<span class="c1">//body validator
+</span><span class="c1"></span><span class="k">const</span> <span class="nx">bodyUser</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&#34;data&#34;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&#34;id&#34;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s2">&#34;email&#34;</span><span class="o">:</span> <span class="s2">&#34;janet.weaver@reqres.in&#34;</span><span class="p">,</span>
+        <span class="s2">&#34;first_name&#34;</span><span class="o">:</span> <span class="s2">&#34;Janet&#34;</span><span class="p">,</span>
+        <span class="s2">&#34;last_name&#34;</span><span class="o">:</span> <span class="s2">&#34;Weaver&#34;</span><span class="p">,</span>
+        <span class="s2">&#34;avatar&#34;</span><span class="o">:</span> <span class="s2">&#34;https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg&#34;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">//request dan validate response(expect)
+</span><span class="c1"></span><span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;Get User Scenario&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">test</span><span class="p">(</span><span class="s1">&#39;Get Single user&#39;</span><span class="p">,</span> <span class="kr">async</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="k">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">getUser</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">status</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">body</span><span class="p">).</span><span class="nx">toMatchSchema</span><span class="p">(</span><span class="nx">schemaUser</span><span class="p">);</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">body</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="nx">bodyUser</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div>
+<ol>
+<li>run test &gt;&gt; <code>npm run test</code></li>
+<li>report test &gt;&gt; <code>npm run report</code></li>
+<li>finish :)</li>
+</ol>
+
+<p>cekidot : <a href="https://setyokun.github.io/post/api-test-with-jest/">https://setyokun.github.io/post/api-test-with-jest/</a></p>
 
 </article>
 <nav class="no-print post-nav">

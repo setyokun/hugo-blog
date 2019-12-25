@@ -17,7 +17,7 @@
       <pubDate>Tue, 24 Dec 2019 10:52:50 +0700</pubDate>
       
       <guid>https://setyokun.github.io/post/api-test-with-jest/</guid>
-      <description>Step by Step Memulai API Testing dengan Jest 1 . Install Node.js (sudo apt-get install nodejs - ubuntu) 2. bikin folder -&amp;gt; masuk ke ide kesayanganmu (saya pake vscode) 3. (ctrl + shift + ~ ) buat masuk ke terminal vscode 4. npm init -&amp;gt; kemudian isi name, version, desc, etc -&amp;gt; setelah kelar ngisi biasanya akan muncul file package.json 5. install test framework jest -&amp;gt; npm install jest &amp;ndash;save-dev 6.</description>
+      <description>Step by Step Memulai API Testing dengan Jest 1 . Install Node.js (sudo apt-get install nodejs - ubuntu) 2. bikin folder -&amp;gt; masuk ke ide kesayanganmu (saya pake vscode) 3. ctrl + shift + ~ buat masuk ke terminal vscode 4. npm init &amp;gt;&amp;gt; kemudian isi name, version, desc, etc -&amp;gt; setelah kelar ngisi biasanya akan muncul file package.json 5. npm install jest --save-dev &amp;gt;&amp;gt; install test framework jest 6.</description>
     </item>
     
     <item>
