@@ -71,27 +71,27 @@
 
 <h3 id="step-by-step-memulai-api-testing-dengan-jest">Step by Step Memulai API Testing dengan Jest</h3>
 
-<p>1 . Install Node.js (sudo apt-get install nodejs - ubuntu)
-2. bikin folder -&gt; masuk ke ide kesayanganmu (saya pake vscode)
-3. <code>ctrl + shift + ~</code> buat masuk ke terminal vscode
-4. <code>npm init</code> &gt;&gt; kemudian isi name, version, desc, etc -&gt; setelah kelar ngisi biasanya akan muncul file package.json
-5. <code>npm install jest --save-dev</code> &gt;&gt; install test framework jest
-6. <code>npm install -g npx</code> &gt;&gt; npx itu buat runner package yang ada di node_modules
+<p>1 . Install Node.js (sudo apt-get install nodejs - ubuntu) <br />
+2. bikin folder -&gt; masuk ke ide kesayanganmu (saya pake vscode) <br />
+3. <code>ctrl + shift + ~</code> buat masuk ke terminal vscode <br />
+4. <code>npm init</code> &gt;&gt; kemudian isi name, version, desc, etc -&gt; setelah kelar ngisi biasanya akan muncul file package.json <br />
+5. <code>npm install jest --save-dev</code> &gt;&gt; install test framework jest <br />
+6. <code>npm install -g npx</code> &gt;&gt; npx itu buat runner package yang ada di node_modules <br />
 7. <code>npx jest --init</code> &gt;&gt; nantinya akan muncul aggrement kek dibawah ini: <br />
 <code>✔ Would you like to use Jest when running &quot;test&quot; script in &quot;package.json&quot;? … yes</code> <br />
 <code>✔ Choose the test environment that will be used for testing › node</code> <br />
 <code>✔ Do you want Jest to add coverage reports? … yes</code> <br />
 <code>✔ Automatically clear mock calls and instances between every test? … yes</code> <br />
-setelah itu , jest.config.js akan muncul
-8. <code>npm install supertest --save</code> &gt;&gt; supertest itu buat handle http request
-(request line : post, get, put, etc
-request header : content-type, accept, etc
-requset body : biasanya dalam bentuk json/xml)
-9. <code>touch .env</code> &gt;&gt; membuat file .env , file ini untuk menampung envirotment/baseUrl dari API. oh iya disini kita pake reqres.in untuk rest-apinya ya. kemudian set <code>baseUrl=https://reqres.in/</code> didalam folder .env
-10. <code>npm install dotenv --save</code> &gt;&gt; dotenv ini untuk me-loads file .env yang tadi kita buat
-11. <code>npm install --save-dev jest-json-schema</code> &gt;&gt; jest-json-schema ini untuk ngehandle expect dari schema validator
-12. <code>npm install jest-html-reporters --save-dev</code> &gt;&gt; untuk report hasil test apinya
-tambahkan code ini :</p>
+setelah itu , jest.config.js akan muncul <br />
+8. <code>npm install supertest --save</code> &gt;&gt; supertest itu buat handle http request <br />
+(request line : post, get, put, etc <br />
+request header : content-type, accept, etc <br />
+requset body : biasanya dalam bentuk json/xml) <br />
+9. <code>touch .env</code> &gt;&gt; membuat file .env , file ini untuk menampung envirotment/baseUrl dari API. oh iya disini kita pake reqres.in untuk rest-apinya ya. kemudian set <code>baseUrl=https://reqres.in/</code> didalam folder .env <br />
+10. <code>npm install dotenv --save</code> &gt;&gt; dotenv ini untuk me-loads file .env yang tadi kita buat <br />
+11. <code>npm install --save-dev jest-json-schema</code> &gt;&gt; jest-json-schema ini untuk ngehandle expect dari schema validator <br />
+12. <code>npm install jest-html-reporters --save-dev</code> &gt;&gt; untuk report hasil test apinya  <br />
+tambahkan code ini :  </p>
 <div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js">   <span class="nx">reporters</span><span class="o">:</span> <span class="p">[</span>
      <span class="s1">&#39;default&#39;</span><span class="p">,</span>
      <span class="s1">&#39;jest-html-reporters&#39;</span>
@@ -208,11 +208,9 @@ tambahkan code ini :</p>
     <span class="p">});</span>
 <span class="p">});</span>
 </code></pre></div>
-<ol>
-<li>run test &gt;&gt; <code>npm run test</code></li>
-<li>report test &gt;&gt; <code>npm run report</code></li>
-<li>finish :)</li>
-</ol>
+<p>16 . run test &gt;&gt; <code>npm run test</code>
+17. report test &gt;&gt; <code>npm run report</code>
+18. finish :)</p>
 
 <p>cekidot : <a href="https://setyokun.github.io/post/api-test-with-jest/">https://setyokun.github.io/post/api-test-with-jest/</a></p>
 
